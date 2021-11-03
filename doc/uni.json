@@ -1,0 +1,1437 @@
+[
+  {
+    "name": "AUV Đại học Mỹ tại Việt Nam",
+    "location": "Đà Nẵng",
+    "code": "AUV"
+  },
+  {
+    "name": "Đại học Buôn Ma Thuột",
+    "location": "Đắk Lắk",
+    "code": "BMU"
+  },
+  {
+    "name": "Học Viện Công Nghệ Bưu Chính Viễn Thông ( Phía Bắc )",
+    "location": "Hà Nội",
+    "code": "BVH"
+  },
+  {
+    "name": "Học Viện Công Nghệ Bưu Chính Viễn Thông (phía Nam)",
+    "location": "Thành phố Hồ Chí Minh",
+    "code": "BVS"
+  },
+  {
+    "name": "Đại Học Bà Rịa – Vũng Tàu",
+    "location": "Bà Rịa - Vũng Tàu",
+    "code": "BVU"
+  },
+  {
+    "name": "Đại Học Công Nghiệp Dệt May Hà Nội",
+    "location": "Hà Nội",
+    "code": "CCM"
+  },
+  {
+    "name": "Đại học Kinh Tế Nghệ An",
+    "location": "Nghệ An",
+    "code": "CEA"
+  },
+  {
+    "name": "Cao Đẳng Kỹ Thuật Cao Thắng",
+    "location": "Thành phố Hồ Chí Minh",
+    "code": "CKC"
+  },
+  {
+    "name": "Đại Học Đông Á",
+    "location": "Đà Nẵng",
+    "code": "DAD"
+  },
+  {
+    "name": "Đại học Nông Lâm Bắc Giang",
+    "location": "Bắc Giang",
+    "code": "DBG"
+  },
+  {
+    "name": "Đại Học Bạc Liêu",
+    "location": "Bạc Liêu",
+    "code": "DBL"
+  },
+  {
+    "name": "Đại Học Công Nghệ Đồng Nai",
+    "location": "Đồng Nai",
+    "code": "DCD"
+  },
+  {
+    "name": "Đại Học Gia Định",
+    "location": "Thành phố Hồ Chí Minh",
+    "code": "GDU"
+  },
+  {
+    "name": "Đại Học Cửu Long",
+    "location": "Vĩnh Long",
+    "code": "DCL"
+  },
+  {
+    "name": "Đại Học Công Nghiệp Hà Nội",
+    "location": "Hà Nội",
+    "code": "DCN"
+  },
+  {
+    "name": "Đại Học Công Nghiệp Thực Phẩm TP HCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DCT"
+  },
+  {
+    "name": "Đại học Công nghiệp Vinh",
+    "location": "\n                    Nghệ An ",
+    "code": "DCV"
+  },
+  {
+    "name": "Đại Học Thành Đông",
+    "location": "\n                    Hải Dương ",
+    "code": "DDB"
+  },
+  {
+    "name": "Đại Học Ngoại Ngữ – Đại Học Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "DDF"
+  },
+  {
+    "name": "Đại Học Bách Khoa – Đại Học Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "DDK"
+  },
+  {
+    "name": "Đại Học Điện Lực",
+    "location": "\n                    Hà Nội ",
+    "code": "DDL"
+  },
+  {
+    "name": "Đại Học Công Nghiệp Quảng Ninh",
+    "location": "\n                    Quảng Bình ",
+    "code": "DDM"
+  },
+  {
+    "name": "Đại Học Đại Nam",
+    "location": "\n                    Hà Nội ",
+    "code": "DDN"
+  },
+  {
+    "name": "Phân Hiệu Đại Học Đà Nẵng tại Kon Tum",
+    "location": "\n                    Kon Tum ",
+    "code": "DDP"
+  },
+  {
+    "name": "Đại Học Sư Phạm – Đại Học Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "DDS"
+  },
+  {
+    "name": "Khoa Y Dược – Đại Học Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "DDY"
+  },
+  {
+    "name": "Đại học Tài Chính – Quản Trị Kinh Doanh",
+    "location": "\n                    Hưng Yên ",
+    "code": "DFA"
+  },
+  {
+    "name": "Đại học Luật - Đại Học Huế",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DHA"
+  },
+  {
+    "name": "Khoa Giáo Dục Thể Chất – Đại Học Huế",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DHC"
+  },
+  {
+    "name": "Khoa Du Lịch – Đại Học Huế",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DHD"
+  },
+  {
+    "name": "Đại Học Ngoại Ngữ – Đại Học Huế",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DHF"
+  },
+  {
+    "name": "Đại Học Kinh Tế – Đại Học Huế",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DHK"
+  },
+  {
+    "name": "Đại Học Nông Lâm – Đại Học Huế",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DHL"
+  },
+  {
+    "name": "Đại Học Nghệ Thuật – Đại Học Huế",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DHN"
+  },
+  {
+    "name": "Phân Hiệu Đại Học Huế tại Quảng Trị",
+    "location": "\n                    Quảng Trị ",
+    "code": "DHQ"
+  },
+  {
+    "name": "Đại Học Sư Phạm – Đại Học Huế",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DHS"
+  },
+  {
+    "name": "Đại Học Khoa Học – Đại Học Huế",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DHT"
+  },
+  {
+    "name": "Đại học Hùng Vương - TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DHV"
+  },
+  {
+    "name": "Đại Học Y Dược – Đại Học Huế",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DHY"
+  },
+  {
+    "name": "Đại Học Kinh Tế Kỹ Thuật Bình Dương",
+    "location": "\n                    Bình Dương ",
+    "code": "DKB"
+  },
+  {
+    "name": "Đại học Công Nghệ TPHCM - HUTECH",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DKC"
+  },
+  {
+    "name": "Đại Học Dược Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "DKH"
+  },
+  {
+    "name": "Đại Học Kinh Tế Kỹ Thuật Công Nghiệp",
+    "location": "\n                    Hà Nội ",
+    "code": "DKK"
+  },
+  {
+    "name": "Đại học Tài Chính Kế Toán",
+    "location": "\n                    Quảng Ngãi ",
+    "code": "DKQ"
+  },
+  {
+    "name": "Đại Học Kỹ Thuật Y Tế Hải Dương",
+    "location": "\n                    Hải Dương ",
+    "code": "DKY"
+  },
+  {
+    "name": "Đại Học Kinh Tế Công Nghiệp Long An",
+    "location": "\n                    Long An ",
+    "code": "DLA"
+  },
+  {
+    "name": "Đại Học Lạc Hồng",
+    "location": "\n                    Đồng Nai ",
+    "code": "DLH"
+  },
+  {
+    "name": "Đại Học Lao Động – Xã Hội ( Cơ sở phía Nam)",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DLS"
+  },
+  {
+    "name": "Đại Học Lao Động – Xã Hội ( Cơ sở Sơn Tây )",
+    "location": "\n                    Hà Nội ",
+    "code": "DLT"
+  },
+  {
+    "name": "Đại Học Lao Động – Xã Hội ( Cơ sở Hà Nội )",
+    "location": "\n                    Hà Nội ",
+    "code": "DLX"
+  },
+  {
+    "name": "Đại học Công nghệ Miền Đông",
+    "location": "\n                    Đồng Nai ",
+    "code": "DMD"
+  },
+  {
+    "name": "Đại Học Tài Chính Marketing",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DMS"
+  },
+  {
+    "name": "Đại học Tài Nguyên và Môi Trường Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "DMT"
+  },
+  {
+    "name": "Đại học Nam Cần Thơ",
+    "location": "\n                    Cần Thơ ",
+    "code": "DNC"
+  },
+  {
+    "name": "Đại Học Ngoại Ngữ – Tin Học TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DNT"
+  },
+  {
+    "name": "Đại Học Đồng Nai",
+    "location": "\n                    Đồng Nai ",
+    "code": "DNU"
+  },
+  {
+    "name": "Đại Học Nội Vụ",
+    "location": "\n                    Hà Nội ",
+    "code": "DNV"
+  },
+  {
+    "name": "Đại Học Dân Lập Phương Đông",
+    "location": "\n                    Hà Nội ",
+    "code": "DPD"
+  },
+  {
+    "name": "Đại Học Phạm Văn Đồng",
+    "location": "\n                    Quảng Ngãi ",
+    "code": "DPQ"
+  },
+  {
+    "name": "Đại Học Phan Thiết",
+    "location": "\n                    Bình Thuận ",
+    "code": "DPT"
+  },
+  {
+    "name": "Đại Học Dân Lập Phú Xuân",
+    "location": "\n                    Thừa Thiên - Huế ",
+    "code": "DPX"
+  },
+  {
+    "name": "Đại Học Phú Yên",
+    "location": "\n                    Phú Yên ",
+    "code": "DPY"
+  },
+  {
+    "name": "Đại Học Quảng Bình",
+    "location": "\n                    Quảng Bình ",
+    "code": "DQB"
+  },
+  {
+    "name": "Đại Học Kinh Doanh và Công Nghệ Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "DQK"
+  },
+  {
+    "name": "Đại Học Quy Nhơn",
+    "location": "\n                    Bình Định ",
+    "code": "DQN"
+  },
+  {
+    "name": "Đại Học Quảng Nam",
+    "location": "\n                    Quảng Nam ",
+    "code": "DQU"
+  },
+  {
+    "name": "Đại Học Sân Khấu, Điện Ảnh TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DSD"
+  },
+  {
+    "name": "Đại Học Công Nghệ Sài Gòn",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DSG"
+  },
+  {
+    "name": "Đại Học Thành Tây",
+    "location": "\n                    Hà Nội ",
+    "code": "DTA"
+  },
+  {
+    "name": "Đại học Công Nghệ Thông Tin và Truyền Thông – Đại Học Thái Nguyên",
+    "location": "\n                    Thái Nguyên ",
+    "code": "DTC"
+  },
+  {
+    "name": "Đại Học Tây Đô",
+    "location": "\n                    Cần Thơ ",
+    "code": "DTD"
+  },
+  {
+    "name": "Đại Học Kinh Tế & Quản Trị Kinh Doanh – Đại Học Thái Nguyên",
+    "location": "\n                    Thái Nguyên ",
+    "code": "DTE"
+  },
+  {
+    "name": "Khoa Ngoại Ngữ – Đại Học Thái Nguyên",
+    "location": "\n                    Thái Nguyên ",
+    "code": "DTF"
+  },
+  {
+    "name": "Đại Học Hoa Sen",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DTH"
+  },
+  {
+    "name": "Đại Học Thăng Long",
+    "location": "\n                    Hà Nội ",
+    "code": "DTL"
+  },
+  {
+    "name": "ĐH Tài Nguyên môi trường TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DTM"
+  },
+  {
+    "name": "Đại Học Nông Lâm – Đại Học Thái Nguyên",
+    "location": "\n                    Thái Nguyên ",
+    "code": "DTN"
+  },
+  {
+    "name": "Phân Hiệu Đại Học Thái Nguyên Tại Lào Cai",
+    "location": "\n                    Lào Cai ",
+    "code": "DTP"
+  },
+  {
+    "name": "Khoa Quốc Tế - Đại Học Thái Nguyên",
+    "location": "\n                    Thái Nguyên ",
+    "code": "DTQ"
+  },
+  {
+    "name": "Đại Học Sư Phạm – Đại Học Thái Nguyên",
+    "location": "\n                    Thái Nguyên ",
+    "code": "DTS"
+  },
+  {
+    "name": "Đại Học Tôn Đức Thắng",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DTT"
+  },
+  {
+    "name": "Đại Học Y Dược – Đại Học Thái Nguyên",
+    "location": "\n                    Thái Nguyên ",
+    "code": "DTY"
+  },
+  {
+    "name": "Đại Học Khoa Học – Đại Học Thái Nguyên",
+    "location": "\n                    Thái Nguyên ",
+    "code": "DTZ"
+  },
+  {
+    "name": "Đại Học Văn Hóa, Thể Thao Và Du Lịch Thanh Hóa",
+    "location": "\n                    Thanh Hóa ",
+    "code": "DVD"
+  },
+  {
+    "name": "Đại Học Văn Hiến",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DVH"
+  },
+  {
+    "name": "Đại Học Văn Lang",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "DVL"
+  },
+  {
+    "name": "Đại Học Trà Vinh",
+    "location": "\n                    Trà Vinh ",
+    "code": "DVT"
+  },
+  {
+    "name": "Đại Học Công Nghệ Vạn Xuân",
+    "location": "\n                    Nghệ An ",
+    "code": "DVX"
+  },
+  {
+    "name": "Đại Học Quốc Tế Miền Đông",
+    "location": "\n                    Bình Dương ",
+    "code": "EIU"
+  },
+  {
+    "name": "Đại Học Giao Thông Vận Tải ( Cơ sở Phía Bắc )",
+    "location": "\n                    Hà Nội ",
+    "code": "GHA"
+  },
+  {
+    "name": "Đại Học Giao Thông Vận Tải ( Cơ sở Phía Nam)",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "GSA"
+  },
+  {
+    "name": "Đại học Công nghệ Giao thông vận tải",
+    "location": "\n                    Hà Nội ",
+    "code": "GTA"
+  },
+  {
+    "name": "Đại Học Giao Thông Vận Tải TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "GTS"
+  },
+  {
+    "name": "Học Viện Báo Chí – Tuyên Truyền",
+    "location": "\n                    Hà Nội ",
+    "code": "HBT"
+  },
+  {
+    "name": "Đại Học Quốc Tế Hồng Bàng",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "HBU"
+  },
+  {
+    "name": "Học Viện Chính Sách và Phát Triển",
+    "location": "\n                    Hà Nội ",
+    "code": "HCP"
+  },
+  {
+    "name": "Học Viện Hậu Cần - Hệ Quân sự",
+    "location": "\n                    Hà Nội ",
+    "code": "HEH"
+  },
+  {
+    "name": "Trường Sĩ Quan Phòng Hóa",
+    "location": "\n                    Hà Nội ",
+    "code": "HGH"
+  },
+  {
+    "name": "Đại Học Hàng Hải",
+    "location": "\n                    Hải Phòng ",
+    "code": "HHA"
+  },
+  {
+    "name": "Học Viện Hàng Không Việt Nam",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "HHK"
+  },
+  {
+    "name": "Đại Học Hạ Long",
+    "location": "\n                    Quảng Ninh ",
+    "code": "HLU"
+  },
+  {
+    "name": "Đại học Thủ Đô Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "HNM"
+  },
+  {
+    "name": "Học Viện Y Dược Học Cổ Truyền Việt Nam",
+    "location": "\n                    Hà Nội ",
+    "code": "HYD"
+  },
+  {
+    "name": "Đại học Kỹ Thuật Công Nghệ Cần Thơ",
+    "location": "\n                    Cần Thơ ",
+    "code": "KCC"
+  },
+  {
+    "name": "Đại Học Kinh Tế Quốc Dân",
+    "location": "\n                    Hà Nội ",
+    "code": "KHA"
+  },
+  {
+    "name": "Đại Học Kinh Tế TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "KSA"
+  },
+  {
+    "name": "Đại Học Kinh Tế -Tài Chính TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "KTC"
+  },
+  {
+    "name": "Trường Sĩ Quan Lục Quân 1 - Đại học Trần Quốc Tuấn",
+    "location": "\n                    Hà Nội ",
+    "code": "LAH"
+  },
+  {
+    "name": "Trường Sĩ Quan Lục Quân 2 - Đại học Nguyễn Huệ",
+    "location": "\n                    Đồng Nai ",
+    "code": "LBH"
+  },
+  {
+    "name": "Đại Học Mở TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "MBS"
+  },
+  {
+    "name": "Đại Học Mỏ Địa Chất",
+    "location": "\n                    Hà Nội ",
+    "code": "MDA"
+  },
+  {
+    "name": "Đại Học Ngân Hàng TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "NHS"
+  },
+  {
+    "name": "Đại Học Ngoại Thương ( Cơ sở phía Bắc )",
+    "location": "\n                    Hà Nội ",
+    "code": "NTH"
+  },
+  {
+    "name": "Đại Học Ngoại Thương (phía Nam)",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "NTS"
+  },
+  {
+    "name": "Đại Học Nguyễn Tất Thành",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "NTT"
+  },
+  {
+    "name": "Học Viện Phòng Không – Không Quân",
+    "location": "\n                    Hà Nội ",
+    "code": "PKH"
+  },
+  {
+    "name": "Đại Học Bách Khoa – Đại Học Quốc Gia TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "QSB"
+  },
+  {
+    "name": "Đại Học Công Nghệ Thông Tin",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "QSC"
+  },
+  {
+    "name": "Đại học Kinh Tế – Luật -Đại Học Quốc Gia TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "QSK"
+  },
+  {
+    "name": "Đại Học Quốc Tế – Đại Học Quốc Gia TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "QSQ"
+  },
+  {
+    "name": "Đại Học Khoa Học Tự Nhiên",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "QST"
+  },
+  {
+    "name": "Đại Học Khoa Học Xã Hội và Nhân Văn",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "QSX"
+  },
+  {
+    "name": "Khoa Y - Đại học Quốc Gia TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "QSY"
+  },
+  {
+    "name": "Đại Học Sài Gòn",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "SGD"
+  },
+  {
+    "name": "Đại Học Sư Phạm TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "SPS"
+  },
+  {
+    "name": "Đại Học An Giang",
+    "location": "\n                    An Giang ",
+    "code": "TAG"
+  },
+  {
+    "name": "Đại Học Đà Lạt",
+    "location": "\n                    Lâm Đồng ",
+    "code": "TDL"
+  },
+  {
+    "name": "Đại Học Nha Trang",
+    "location": "\n                    Khánh Hòa ",
+    "code": "TSN"
+  },
+  {
+    "name": "Đại Học Văn Hóa Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "VHH"
+  },
+  {
+    "name": "Đại Học Y Dược TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "YDS"
+  },
+  {
+    "name": "Đại Học Công Nghệ và Quản Lý Hữu Nghị",
+    "location": "\n                    Hà Nội ",
+    "code": "DCQ"
+  },
+  {
+    "name": "Đại học Công nghệ Đông Á",
+    "location": "\n                    Hà Nội ",
+    "code": "DDA"
+  },
+  {
+    "name": "Đại học Phan Châu Trinh",
+    "location": "\n                    Quảng Nam ",
+    "code": "DPC"
+  },
+  {
+    "name": "Đại học Yersin Đà Lạt",
+    "location": "\n                    Lâm Đồng ",
+    "code": "DYD"
+  },
+  {
+    "name": "Đại học Luật TP.HCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "LPS"
+  },
+  {
+    "name": "Đại Học Sư Phạm Nghệ Thuật Trung Ương",
+    "location": "\n                    Hà Nội ",
+    "code": "GNT"
+  },
+  {
+    "name": "Đại Học Dân Lập Hải Phòng",
+    "location": "\n                    Hải Phòng ",
+    "code": "DHP"
+  },
+  {
+    "name": "Đại Học Hoa Lư",
+    "location": "\n                    Ninh Bình ",
+    "code": "DNB"
+  },
+  {
+    "name": "Đại Học Quang Trung",
+    "location": "\n                    Bình Định ",
+    "code": "DQT"
+  },
+  {
+    "name": "Đại Học Tài Chính Ngân Hàng Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "FBU"
+  },
+  {
+    "name": "Đại Học Hà Tĩnh",
+    "location": "\n                    Hà Tĩnh ",
+    "code": "HHT"
+  },
+  {
+    "name": "Học Viện Thanh Thiếu Niên Việt Nam",
+    "location": "\n                    Hà Nội ",
+    "code": "HTN"
+  },
+  {
+    "name": "Đại Học Nguyễn Trãi",
+    "location": "\n                    Hà Nội ",
+    "code": "NTU"
+  },
+  {
+    "name": "Đại Học Dầu Khí Việt Nam",
+    "location": "\n                    Bà Rịa - Vũng Tàu ",
+    "code": "PVU"
+  },
+  {
+    "name": "Đại Học Đồng Tháp",
+    "location": "\n                    Đồng Tháp ",
+    "code": "SPD"
+  },
+  {
+    "name": "Đại Học Sư Phạm Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "SPH"
+  },
+  {
+    "name": "Đại Học Sư Phạm Kỹ Thuật TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "SPK"
+  },
+  {
+    "name": "Đại Học Cần Thơ",
+    "location": "\n                    Cần Thơ ",
+    "code": "TCT"
+  },
+  {
+    "name": "Đại học Thủ Dầu Một",
+    "location": "\n                    Bình Dương ",
+    "code": "TDM"
+  },
+  {
+    "name": "Đại Học Vinh",
+    "location": "\n                    Nghệ An ",
+    "code": "TDV"
+  },
+  {
+    "name": "Đại Học Dân Lập Duy Tân",
+    "location": "\n                    Đà Nẵng ",
+    "code": "DDT"
+  },
+  {
+    "name": "Đại học Kiểm Sát Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "DKS"
+  },
+  {
+    "name": "Đại Học Hồng Đức",
+    "location": "\n                    Thanh Hóa ",
+    "code": "HDT"
+  },
+  {
+    "name": "Học Viện Phụ Nữ Việt Nam",
+    "location": "\n                    Hà Nội ",
+    "code": "HPN"
+  },
+  {
+    "name": "Học Viện Ngoại Giao",
+    "location": "\n                    Hà Nội ",
+    "code": "HQT"
+  },
+  {
+    "name": "Học viện Tòa án",
+    "location": "\n                    Hà Nội ",
+    "code": "HTA"
+  },
+  {
+    "name": "Học Viện Tài Chính",
+    "location": "\n                    Hà Nội ",
+    "code": "HTC"
+  },
+  {
+    "name": "Học Viện Nông Nghiệp Việt Nam",
+    "location": "\n                    Hà Nội ",
+    "code": "HVN"
+  },
+  {
+    "name": "Trường Sĩ Quan Không Quân - Hệ Đại học",
+    "location": "\n                    Khánh Hòa ",
+    "code": "KGH"
+  },
+  {
+    "name": "Học Viện Kỹ Thuật Mật Mã",
+    "location": "\n                    Hà Nội ",
+    "code": "KMA"
+  },
+  {
+    "name": "Học Viện Kỹ Thuật Quân Sự - Hệ Quân sự",
+    "location": "\n                    Hà Nội ",
+    "code": "KQH"
+  },
+  {
+    "name": "Đại Học Kiến Trúc Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "KTA"
+  },
+  {
+    "name": "Đại Học Kiến Trúc TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "KTS"
+  },
+  {
+    "name": "Đại Học Công Đoàn",
+    "location": "\n                    Hà Nội ",
+    "code": "LDA"
+  },
+  {
+    "name": "Đại Học Luật Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "LPH"
+  },
+  {
+    "name": "Viện Đại Học Mở Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "MHN"
+  },
+  {
+    "name": "Đại Học Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "NHF"
+  },
+  {
+    "name": "Học Viện Khoa Học Quân Sự - Hệ Quân sự",
+    "location": "\n                    Hà Nội ",
+    "code": "NQH"
+  },
+  {
+    "name": "Đại Học Phòng Cháy Chữa Cháy ( Phía Bắc )",
+    "location": "\n                    Hà Nội ",
+    "code": "PCH"
+  },
+  {
+    "name": "Đại Học Phòng Cháy Chữa Cháy (phía Nam)",
+    "location": "\n                    Hà Nội ",
+    "code": "PCS"
+  },
+  {
+    "name": "Đại Học Kinh Tế – Đại Học Quốc Gia Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "QHE"
+  },
+  {
+    "name": "Đại Học Ngoại Ngữ – Đại Học Quốc Gia Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "QHF"
+  },
+  {
+    "name": "Đại Học Công Nghệ – Đại Học Quốc Gia Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "QHI"
+  },
+  {
+    "name": "Khoa Luật – Đại Học Quốc Gia Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "QHL"
+  },
+  {
+    "name": "Khoa Quốc Tế – Đại Học Quốc Gia Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "QHQ"
+  },
+  {
+    "name": "Đại Học Giáo Dục - Đại học Quốc Gia Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "QHS"
+  },
+  {
+    "name": "Đại Học Khoa Học Tự Nhiên – Đại Học Quốc Gia Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "QHT"
+  },
+  {
+    "name": "Đại Học Khoa Học Xã Hội và Nhân Văn – Đại Học Quốc Gia Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "QHX"
+  },
+  {
+    "name": "Khoa Y Dược - Đại học Quốc Gia Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "QHY"
+  },
+  {
+    "name": "Đại học Sao Đỏ",
+    "location": "\n                    Hải Dương ",
+    "code": "SDU"
+  },
+  {
+    "name": "Đại Học Sư Phạm Kỹ Thuật Hưng Yên",
+    "location": "\n                    Hải Dương ",
+    "code": "SKH"
+  },
+  {
+    "name": "Đại Học Sư Phạm Hà Nội 2",
+    "location": "\n                    Hà Nội ",
+    "code": "SP2"
+  },
+  {
+    "name": "Khoa Công Nghệ – Đại Học Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "DDC"
+  },
+  {
+    "name": "Đại Học Kinh Tế – Đại Học Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "DDQ"
+  },
+  {
+    "name": "Học Viện An Ninh Nhân Dân",
+    "location": "\n                    Hà Nội ",
+    "code": "ANH"
+  },
+  {
+    "name": "Đại Học An Ninh Nhân Dân",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "ANS"
+  },
+  {
+    "name": "Học Viện Biên Phòng",
+    "location": "\n                    Hà Nội ",
+    "code": "BPH"
+  },
+  {
+    "name": "Học Viện Cảnh Sát Nhân Dân",
+    "location": "\n                    Hà Nội ",
+    "code": "CSH"
+  },
+  {
+    "name": "Đại Học Cảnh Sát Nhân Dân",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "CSS"
+  },
+  {
+    "name": "Trường Sĩ Quan Đặc Công",
+    "location": "\n                    Hà Nội ",
+    "code": "DCH"
+  },
+  {
+    "name": "Phân hiệu Đại học Nông Lâm TP. HCM tại Gia Lai",
+    "location": "\n                    Gia Lai ",
+    "code": "NLG"
+  },
+  {
+    "name": "Phân hiệu Đại học Nông Lâm TP. HCM tại Ninh Thuận",
+    "location": "\n                    Ninh Thuận ",
+    "code": "NLN"
+  },
+  {
+    "name": "Đại Học Nông Lâm TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "NLS"
+  },
+  {
+    "name": "Đại Học Y Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "YHB"
+  },
+  {
+    "name": "Đại Học Công Nghiệp TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "HUI"
+  },
+  {
+    "name": "Học Viện Hải Quân",
+    "location": "\n                    Khánh Hòa ",
+    "code": "HQH"
+  },
+  {
+    "name": "Trường Sĩ Quan Chính Trị - Đại Học Chính Trị",
+    "location": "\n                    Bắc Ninh ",
+    "code": "LCH"
+  },
+  {
+    "name": "Đại Học Mỹ Thuật Việt Nam",
+    "location": "\n                    Hà Nội ",
+    "code": "MTH"
+  },
+  {
+    "name": "Học Viện Ngân Hàng",
+    "location": "\n                    Hà Nội ",
+    "code": "NHH"
+  },
+  {
+    "name": "Trường Sĩ Quan Pháo Binh",
+    "location": "\n                    Hà Nội ",
+    "code": "PBH"
+  },
+  {
+    "name": "Đại Học Hải Phòng",
+    "location": "\n                    Hải Phòng ",
+    "code": "THP"
+  },
+  {
+    "name": "Đại Học Thương Mại",
+    "location": "\n                    Hà Nội ",
+    "code": "TMA"
+  },
+  {
+    "name": "Trường Sĩ Quan Kĩ Thuật Quân Sự - Hệ Quân sự",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "VPH"
+  },
+  {
+    "name": "Học Viện Quân Y - Hệ Quân sự",
+    "location": "\n                    Hà Nội ",
+    "code": "YQH"
+  },
+  {
+    "name": "Đại học Sư phạm Kỹ thuật Vinh",
+    "location": "\n                    Nghệ An ",
+    "code": "SKV"
+  },
+  {
+    "name": "Đại Học Bách Khoa Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "BKA"
+  },
+  {
+    "name": "Đại Học Y Tế Công Cộng",
+    "location": "\n                    Hà Nội ",
+    "code": "YTC"
+  },
+  {
+    "name": "Học viện cán bộ TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "HVC"
+  },
+  {
+    "name": "Đại Học Sư Phạm Kỹ Thuật Nam Định",
+    "location": "\n                    Nam Định ",
+    "code": "SKN"
+  },
+  {
+    "name": "Đại học Kiên Giang",
+    "location": "\n                    Kiên Giang ",
+    "code": "TKG"
+  },
+  {
+    "name": "Đại học RMIT Việt Nam",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "RMU"
+  },
+  {
+    "name": "Đại Học Tây Nguyên",
+    "location": "\n                    Đắk Lắk ",
+    "code": "TTN"
+  },
+  {
+    "name": "Cao Đẳng Công Nghệ Thông Tin – Đại Học Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "DDI"
+  },
+  {
+    "name": "Đại Học Xây Dựng Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "XDA"
+  },
+  {
+    "name": "Học Viện Kĩ Thuật Quân Sự - Hệ Dân sự",
+    "location": "\n                    Hà Nội ",
+    "code": "DQH"
+  },
+  {
+    "name": "Đại Học Việt Đức",
+    "location": "\n                    Bình Dương ",
+    "code": "VGU"
+  },
+  {
+    "name": "Đại Học Thủy Lợi ( Cơ sở 1 )",
+    "location": "\n                    Hà Nội ",
+    "code": "TLA"
+  },
+  {
+    "name": "Đại Học Thủy Lợi ( Cơ sở 2 )",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "TLS"
+  },
+  {
+    "name": "Đại Học Kỹ Thuật Công Nghiệp – Đại Học Thái Nguyên",
+    "location": "\n                    Thái Nguyên ",
+    "code": "DTK"
+  },
+  {
+    "name": "Đại Học Lâm Nghiệp ( Cơ sở 1 )",
+    "location": "\n                    Hà Nội ",
+    "code": "LNH"
+  },
+  {
+    "name": "Đại Học Lâm Nghiệp ( Cơ sở 2 )",
+    "location": "\n                    Đồng Nai ",
+    "code": "LNS"
+  },
+  {
+    "name": "Đại Học Y Khoa Phạm Ngọc Thạch",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "TYS"
+  },
+  {
+    "name": "Đại Học Mỹ Thuật TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "MTS"
+  },
+  {
+    "name": "Đại Học Bình Dương",
+    "location": "\n                    Bình Dương ",
+    "code": "DBD"
+  },
+  {
+    "name": "Học Viện Hành Chính Quốc Gia ( phía Bắc )",
+    "location": "\n                    Hà Nội ",
+    "code": "HCH"
+  },
+  {
+    "name": "Học Viện Hành Chính Quốc Gia (phía Nam)",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "HCS"
+  },
+  {
+    "name": "Đại Học Kỹ Thuật - Hậu Cần Công An Nhân Dân ( Phía Bắc )",
+    "location": "\n                    Bắc Ninh ",
+    "code": "HCB"
+  },
+  {
+    "name": "Đại Học Kỹ Thuật - Hậu Cần Công An Nhân Dân ( Phía Nam )",
+    "location": "\n                    Bắc Ninh ",
+    "code": "HCN"
+  },
+  {
+    "name": "Học Viện Chính Trị Công An Nhân Dân",
+    "location": "\n                    Hà Nội ",
+    "code": "HCA"
+  },
+  {
+    "name": "Đại Học Mỹ Thuật Công Nghiệp",
+    "location": "\n                    Hà Nội ",
+    "code": "MTC"
+  },
+  {
+    "name": "Đại Học Văn Hóa – Nghệ Thuật Quân Đội",
+    "location": "\n                    Hà Nội ",
+    "code": "ZNH"
+  },
+  {
+    "name": "Đại Học Văn Hóa TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "VHS"
+  },
+  {
+    "name": "Đại Học Sân Khấu Điện Ảnh",
+    "location": "\n                    Hà Nội ",
+    "code": "SKD"
+  },
+  {
+    "name": "Nhạc Viện TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "NVS"
+  },
+  {
+    "name": "Đại Học Sư Phạm Thể Dục Thể Thao TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "STS"
+  },
+  {
+    "name": "Đại Học Quốc Tế Sài Gòn",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "TTQ"
+  },
+  {
+    "name": "Trường Sĩ Quan Kĩ Thuật Quân Sự - Hệ Dân sự",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "ZPH"
+  },
+  {
+    "name": "Học Viện Khoa Học Quân Sự - Hệ Dân sự",
+    "location": "\n                    Hà Nội ",
+    "code": "DNH"
+  },
+  {
+    "name": "Học Viện Quân Y - Hệ Dân sự",
+    "location": "\n                    Hà Nội ",
+    "code": "DYH"
+  },
+  {
+    "name": "Học Viện Hậu Cần - Hệ Dân sự",
+    "location": "\n                    Hà Nội ",
+    "code": "HFH"
+  },
+  {
+    "name": "Học Viện Ngân Hàng Phân Viện Bắc Ninh",
+    "location": "\n                    Bắc Ninh ",
+    "code": "NHB"
+  },
+  {
+    "name": "Học Viên Ngân Hàng ( Phân Viện Phú Yên )",
+    "location": "\n                    Phú Yên ",
+    "code": "NHP"
+  },
+  {
+    "name": "Học Viện Quản Lý Giáo Dục",
+    "location": "\n                    Hà Nội ",
+    "code": "HVQ"
+  },
+  {
+    "name": "Đại Học Kiến Trúc Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "KTD"
+  },
+  {
+    "name": "Đại Học Y Hải Phòng",
+    "location": "\n                    Hải Phòng ",
+    "code": "YPB"
+  },
+  {
+    "name": "Đại Học Thể DụcThể Thao Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "TTD"
+  },
+  {
+    "name": "Đại Học Y Dược Cần Thơ",
+    "location": "\n                    Cần Thơ ",
+    "code": "YCT"
+  },
+  {
+    "name": "Trường Sĩ quan Chính trị (hệ dân sự)",
+    "location": "\n                    Bắc Ninh ",
+    "code": "LCS"
+  },
+  {
+    "name": "Đại Học Thể Dục Thể Thao TPHCM",
+    "location": "\n                    Thành phố Hồ Chí Minh ",
+    "code": "TDS"
+  },
+  {
+    "name": "Trường Sĩ Quan Tăng – Thiết Giáp",
+    "location": "\n                    Vĩnh Phúc ",
+    "code": "TGH"
+  },
+  {
+    "name": "Trường Sĩ Quan Thông Tin - Hệ Quân sự - Đại Học Thông Tin Liên Lạc",
+    "location": "\n                    Khánh Hòa ",
+    "code": "TTH"
+  },
+  {
+    "name": "Đại Học Công Nghiệp Việt Hung",
+    "location": "\n                    Hà Nội ",
+    "code": "VHD"
+  },
+  {
+    "name": "Đại học Kỹ thuật Y Dược Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "YDN"
+  },
+  {
+    "name": "Đại Học Y Khoa Vinh",
+    "location": "\n                    Nghệ An ",
+    "code": "YKV"
+  },
+  {
+    "name": "Đại Học Y Dược Thái Bình",
+    "location": "\n                    Thái Bình ",
+    "code": "YTB"
+  },
+  {
+    "name": "Trường Sĩ Quan Công Binh – Hệ Dân sự",
+    "location": "\n                    Bình Dương ",
+    "code": "ZCH"
+  },
+  {
+    "name": "Đại Học Xây Dựng Miền Tây",
+    "location": "\n                    Vĩnh Long ",
+    "code": "MTU"
+  },
+  {
+    "name": "Phân hiệu Trường Đại học Xây dựng Miền Trung tại Đà Nẵng",
+    "location": "\n                    Đà Nẵng ",
+    "code": "XDN"
+  },
+  {
+    "name": "Đại Học Tây Bắc",
+    "location": "\n                    Sơn La ",
+    "code": "TTB"
+  },
+  {
+    "name": "Đại học Khánh Hòa",
+    "location": "\n                    Khánh Hòa ",
+    "code": "UKH"
+  },
+  {
+    "name": "Đại Học Hải Dương",
+    "location": "\n                    Hải Dương ",
+    "code": "DKT"
+  },
+  {
+    "name": "Đại Học Thái Bình",
+    "location": "\n                    Thái Bình ",
+    "code": "DTB"
+  },
+  {
+    "name": "Đại Học Chu Văn An",
+    "location": "\n                    Hưng Yên ",
+    "code": "DCA"
+  },
+  {
+    "name": "Đại Học Dân Lập Đông Đô",
+    "location": "\n                    Hà Nội ",
+    "code": "DDD"
+  },
+  {
+    "name": "Đại học Nguyễn Huệ",
+    "location": "\n                    Đồng Nai ",
+    "code": "LBS"
+  },
+  {
+    "name": "Đại Học Mỹ Thuật Công Nghiệp Á Châu",
+    "location": "\n                    Hà Nội ",
+    "code": "MCA"
+  },
+  {
+    "name": "Trường Sĩ Quan Công Binh – Hệ Quân sự",
+    "location": "\n                    Bình Dương ",
+    "code": "SNH"
+  },
+  {
+    "name": "Đại Học Thái Bình Dương",
+    "location": "\n                    Khánh Hòa ",
+    "code": "TBD"
+  },
+  {
+    "name": "Đại Học Thể Dục Thể Thao Bắc Ninh",
+    "location": "\n                    Bắc Ninh ",
+    "code": "TDB"
+  },
+  {
+    "name": "Đại học Thành Đô",
+    "location": "\n                    Hà Nội ",
+    "code": "TDD"
+  },
+  {
+    "name": "Đại Học Hùng Vương",
+    "location": "\n                    Phú Thọ ",
+    "code": "THV"
+  },
+  {
+    "name": "Đại học Tân Trào",
+    "location": "\n                    Tuyên Quang ",
+    "code": "TQU"
+  },
+  {
+    "name": "Đại Học Tiền Giang",
+    "location": "\n                    Tiền Giang ",
+    "code": "TTG"
+  },
+  {
+    "name": "Đại Học Kinh Bắc",
+    "location": "\n                    Bắc Ninh ",
+    "code": "UKB"
+  },
+  {
+    "name": "Đại Học Sư Phạm Kỹ Thuật Vĩnh Long",
+    "location": "\n                    Vĩnh Long ",
+    "code": "VLU"
+  },
+  {
+    "name": "Đại Học Võ Trường Toản",
+    "location": "\n                    Hậu Giang ",
+    "code": "VTT"
+  },
+  {
+    "name": "Đại Học Công Nghiệp Việt Trì",
+    "location": "\n                    Phú Thọ ",
+    "code": "VUI"
+  },
+  {
+    "name": "Đại Học Điều Dưỡng Nam Định",
+    "location": "\n                    Nam Định ",
+    "code": "YDD"
+  },
+  {
+    "name": "Đại học FPT",
+    "location": "\n                    Hà Nội ",
+    "code": "FPT"
+  },
+  {
+    "name": "Đại học Quốc tế Bắc Hà",
+    "location": "\n                    Bắc Ninh ",
+    "code": "DBH"
+  },
+  {
+    "name": "Đại Học Việt Bắc",
+    "location": "\n                    Thái Nguyên ",
+    "code": "DVB"
+  },
+  {
+    "name": "Đại học Dân lập Lương Thế Vinh",
+    "location": "\n                    Nam Định ",
+    "code": "DTV"
+  },
+  {
+    "name": "Đại học Trưng Vương",
+    "location": "\n                    Vĩnh Phúc ",
+    "code": "DVP"
+  },
+  {
+    "name": "Đại học Hòa Bình",
+    "location": "\n                    Hà Nội ",
+    "code": "ETU"
+  },
+  {
+    "name": "Trường Sĩ quan Thông tin - Hệ Dân sự - Đại học Thông tin liên lạc",
+    "location": "\n                    Khánh Hòa ",
+    "code": "TCU"
+  },
+  {
+    "name": "Đại Học Sư Phạm Thể Dục Thể Thao Hà Nội",
+    "location": "\n                    Hà Nội ",
+    "code": "TDH"
+  },
+  {
+    "name": "Trường Fast Tarck SE",
+    "location": "\n                    Đà Nẵng ",
+    "code": "zz01"
+  }
+]

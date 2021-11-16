@@ -4,7 +4,7 @@ import {
   deleteEducationData,
   getAllEducationData,
   patchEducationData,
-} from './../controllers/Education';
+} from '../controllers/Education';
 import express from 'express';
 import { body, check } from 'express-validator';
 

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
-import { db } from '../models';
+import { db } from '../../models';
 
 interface IEducationData {
   name: string;

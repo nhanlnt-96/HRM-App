@@ -2,7 +2,7 @@ import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
 
 interface ICareerTitleAttributes {
   id: string;
-  positionId: string;
+  positionCode: string;
   titleName: string;
   titleCode: string;
 }
@@ -26,7 +26,7 @@ export const CareerTitleFactory = (sequelize: Sequelize) => {
       autoIncrement: false,
       type: DataTypes.UUID,
     },
-    positionId: {
+    positionCode: {
       allowNull: false,
       type: DataTypes.UUID,
     },

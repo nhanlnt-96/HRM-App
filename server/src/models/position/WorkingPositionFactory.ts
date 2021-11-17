@@ -1,8 +1,9 @@
 import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
 
 interface IWorkingPositionAttributes {
-  positionName: string;
   positionCode: string;
+  positionName: string;
+  departmentCode: number;
 }
 
 type IWorkingPositionCreationAttributes = Optional<IWorkingPositionAttributes, 'positionCode'>;
@@ -17,15 +18,19 @@ export type WorkingPositionStatic = typeof Model & {
 
 export const WorkingPositionFactory = (sequelize: Sequelize) => {
   return <WorkingPositionStatic>sequelize.define<IWorkingPositionInstance>('hrm_working_position', {
+    positionCode: {
+      primaryKey: true,
+      unique: true,
+      autoIncrement: true,
+      type: DataTypes.INTEGER,
+    },
     positionName: {
       allowNull: false,
       type: DataTypes.STRING,
     },
-    positionCode: {
-      primaryKey: true,
-      unique: true,
+    departmentCode: {
       allowNull: false,
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
   });
 };

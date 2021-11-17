@@ -5,7 +5,6 @@ interface IUserAccountAttributes {
   username: string;
   password: string;
   level: number;
-  role: number;
   status: number;
   updatedBy: string;
   createdBy: string;
@@ -41,10 +40,6 @@ export const UserAccountFactory = (sequelize: Sequelize) => {
       type: DataTypes.STRING,
     },
     level: {
-      allowNull: false,
-      type: DataTypes.INTEGER,
-    },
-    role: {
       allowNull: false,
       type: DataTypes.INTEGER,
     },

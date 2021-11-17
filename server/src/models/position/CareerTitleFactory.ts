@@ -1,13 +1,12 @@
 import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
 
 interface ICareerTitleAttributes {
-  id: string;
-  positionId: string;
+  titleCode: number;
+  positionCode: string;
   titleName: string;
-  titleCode: string;
 }
 
-type ICareerTitleCreationAttributes = Optional<ICareerTitleAttributes, 'id'>;
+type ICareerTitleCreationAttributes = Optional<ICareerTitleAttributes, 'titleCode'>;
 
 export interface ICareerTitleInstance
   extends Model<ICareerTitleAttributes, ICareerTitleCreationAttributes>,
@@ -19,22 +18,18 @@ export type CareerTitleStatic = typeof Model & {
 
 export const CareerTitleFactory = (sequelize: Sequelize) => {
   return <CareerTitleStatic>sequelize.define<ICareerTitleInstance>('hrm_career_title', {
-    id: {
+    titleCode: {
       allowNull: false,
       primaryKey: true,
       unique: true,
-      autoIncrement: false,
-      type: DataTypes.UUID,
+      autoIncrement: true,
+      type: DataTypes.INTEGER,
     },
-    positionId: {
+    positionCode: {
       allowNull: false,
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
     },
     titleName: {
-      allowNull: false,
-      type: DataTypes.STRING,
-    },
-    titleCode: {
       allowNull: false,
       type: DataTypes.STRING,
     },

@@ -3,6 +3,7 @@ import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
 interface IUserRoleAttributes {
   id: string;
   userId: string;
+  departmentCode: number;
 }
 
 type IUserRoleCreationAttributes = Optional<IUserRoleAttributes, 'id'>;
@@ -22,6 +23,10 @@ export const UserRoleFactory = (sequelize: Sequelize) => {
       primaryKey: true,
       unique: true,
       autoIncrement: true,
+      type: DataTypes.INTEGER,
+    },
+    departmentCode: {
+      allowNull: false,
       type: DataTypes.INTEGER,
     },
     userId: {

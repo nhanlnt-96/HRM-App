@@ -78,7 +78,7 @@ const WorkingPosition = WorkingPositionFactory(sequelize);
 const CareerTitle = CareerTitleFactory(sequelize);
 // Table association
 UserRole.hasMany(WorkingDepartment, {
-  foreignKey: 'roleId',
+  foreignKey: 'departmentCode',
 });
 WorkingDepartment.hasMany(WorkingPosition, {
   foreignKey: 'departmentCode',

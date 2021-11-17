@@ -3,7 +3,6 @@ import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
 interface IWorkingDepartmentAttributes {
   departmentCode: number;
   departmentName: string;
-  roleId: string;
 }
 
 type IWorkingDepartmentCreationAttributes = Optional<IWorkingDepartmentAttributes, 'departmentCode'>;
@@ -28,10 +27,6 @@ export const WorkingDepartmentFactory = (sequelize: Sequelize) => {
     departmentName: {
       allowNull: false,
       type: DataTypes.STRING,
-    },
-    roleId: {
-      allowNull: false,
-      type: DataTypes.INTEGER,
     },
   });
 };

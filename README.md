@@ -8,3 +8,4 @@
 
 `server`
 - [001]: Update database table
+- [002]: Edit assciation of table

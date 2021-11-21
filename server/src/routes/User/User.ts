@@ -1,6 +1,5 @@
 import express from 'express';
 import {
-  createCareerTitle,
   createWorkingDepartment,
   createWorkingPosition,
   getAllWorkingPosition,
@@ -31,11 +30,4 @@ userRouter.post(
 // Put working position
 userRouter.put('/working-position/update/:code', body('positionName').notEmpty().trim(), putWorkingPosition);
 
-// Create career title
-userRouter.post(
-  '/career-title',
-  body('titleName').notEmpty().trim(),
-  body('positionCode').notEmpty().trim(),
-  createCareerTitle,
-);
 export { userRouter };

@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { db } from '../../models';
 import { validationResult } from 'express-validator';
 
-const { WorkingDepartment, WorkingPosition, CareerTitle } = db;
+const { WorkingDepartment, WorkingPosition } = db;
 
 interface IWorkingData {
   departmentName?: string;
@@ -16,7 +16,7 @@ interface IWorkingData {
 export const getAllWorkingPosition = async (req: Request, res: Response) => {
   try {
     const workingPosition = await WorkingDepartment.findAll({
-      include: [{ model: WorkingPosition, include: [{ model: CareerTitle }] }],
+      include: [{ model: WorkingPosition }],
       order: [['departmentCode', 'ASC']],
     });
     res.status(200).json({
@@ -146,37 +146,6 @@ export const putWorkingPosition = async (req: Request, res: Response) => {
       }
     } catch (error) {
       res.status(400).json({ success: false, error });
-    }
-  } else {
-    res.status(400).json({ success: false, errors: errors.array() });
-  }
-};
-
-// Create career title
-export const createCareerTitle = async (req: Request, res: Response) => {
-  const { titleName, positionCode } = req.body;
-  const recordCheck = await checkDataExist(CareerTitle, { titleName, positionCode });
-  const errors = validationResult(req);
-  if (errors.isEmpty()) {
-    if (!recordCheck) {
-      try {
-        const createResponse = await CareerTitle.create({
-          titleName,
-          positionCode,
-        });
-        res.status(201).json({
-          success: true,
-          message: `${createResponse.titleName} is created.`,
-          data: createResponse,
-        });
-      } catch (error) {
-        res.status(400).json({ success: false, error });
-      }
-    } else {
-      res.status(400).json({
-        success: false,
-        error: `${titleName} already exist.`,
-      });
     }
   } else {
     res.status(400).json({ success: false, errors: errors.array() });

@@ -3,4 +3,4 @@ export * from './UserAllowanceFactory';
 export * from './UserCertificationFactory';
 export * from './UserContractFactory';
 export * from './UserInfoFactory';
-export * from './UserRoleFactory';
+export * from './UserPositionFactory';

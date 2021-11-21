@@ -22,20 +22,24 @@ export type UniversityDataStatic = typeof Model & {
 };
 
 export const UniversityDataFactory = (sequelize: Sequelize) => {
-  return <UniversityDataStatic>sequelize.define<IUniversityDataInstance>('hrm_university_college', {
-    code: {
-      primaryKey: true,
-      unique: true,
-      allowNull: false,
-      type: DataTypes.STRING,
+  return <UniversityDataStatic>sequelize.define<IUniversityDataInstance>(
+    'hrm_university_college',
+    {
+      code: {
+        primaryKey: true,
+        unique: true,
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
+      name: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
+      location: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
     },
-    name: {
-      allowNull: false,
-      type: DataTypes.STRING,
-    },
-    location: {
-      allowNull: false,
-      type: DataTypes.STRING,
-    },
-  });
+    { timestamps: false },
+  );
 };

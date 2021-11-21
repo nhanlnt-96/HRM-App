@@ -80,11 +80,9 @@ const CareerTitle = CareerTitleFactory(sequelize);
 WorkingDepartment.hasMany(WorkingPosition, {
   foreignKey: 'departmentCode',
 });
-// WorkingPosition.belongsTo(WorkingDepartment);
 WorkingPosition.hasMany(CareerTitle, {
   foreignKey: 'positionCode',
 });
-// CareerTitle.belongsTo(WorkingPosition);
 
 // Table university data
 const UniversityData = UniversityDataFactory(sequelize);

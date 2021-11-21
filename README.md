@@ -12,3 +12,4 @@
 - [003]: Fix bug auto create column in table
 - [004]: Edit association of table
 - [005]: Edit table name and association of table
+- [006]: Update new field to user account table

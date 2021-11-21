@@ -1,11 +1,12 @@
 import express from 'express';
-import {body, check} from 'express-validator';
+import { body, check } from 'express-validator';
 import {
-    createMultiEducationData,
-    createNewEducationData, deleteEducationData,
-    getAllEducationData,
-    patchEducationData
-} from "../../controllers/Education";
+  createMultiEducationData,
+  createNewEducationData,
+  deleteEducationData,
+  getAllEducationData,
+  patchEducationData,
+} from '../../controllers/Education';
 
 const educationRouter = express.Router();
 
@@ -14,11 +15,11 @@ educationRouter.get('/', getAllEducationData);
 
 // Create a new university or college
 educationRouter.post(
-    '/',
-    body('name').notEmpty().trim(),
-    body('code').notEmpty().trim(),
-    body('location').notEmpty().trim(),
-    createNewEducationData,
+  '/',
+  body('name').notEmpty().trim(),
+  body('code').notEmpty().trim(),
+  body('location').notEmpty().trim(),
+  createNewEducationData,
 );
 
 // Create multi new university or college using json
@@ -26,13 +27,14 @@ educationRouter.post('/create-multi', createMultiEducationData);
 
 // Put university or college
 educationRouter.patch(
-    '/update/code=:code',
-    check('name').optional().if(body('name').exists()).notEmpty().trim(),
-    check('location').optional().if(body('location').exists()).notEmpty().trim(),
-    patchEducationData,
+  '/',
+  body('code').notEmpty().trim(),
+  check('name').optional().if(body('name').exists()).notEmpty().trim(),
+  check('location').optional().if(body('location').exists()).notEmpty().trim(),
+  patchEducationData,
 );
 
 // Put university or college
-educationRouter.delete('/delete/code=:code', deleteEducationData);
+educationRouter.delete('/delete/:code', deleteEducationData);
 
-export {educationRouter};
+export { educationRouter };

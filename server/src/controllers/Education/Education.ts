@@ -1,11 +1,12 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
 import { db } from '../../models';
+import { checkDataExist, deleteData, updateData } from '../../helpers';
 
-interface IEducationData {
+interface IEducation {
   name: string;
-  code: string;
   location: string;
+  code: string;
 }
 
 const { UniversityData } = db;
@@ -25,14 +26,14 @@ export const getAllEducationData = async (req: Request, res: Response) => {
 
 // Create a new university or college
 export const createNewEducationData = async (req: Request, res: Response) => {
-  const educationInput: IEducationData = req.body;
-  const recordCheck = await UniversityData.findOne({ where: { name: educationInput.name } });
+  const { name, code, location } = req.body;
+  const recordCheck = await checkDataExist(UniversityData, { name });
   const errors = validationResult(req);
 
   if (errors.isEmpty()) {
     if (!recordCheck) {
       try {
-        const response = await UniversityData.create(educationInput);
+        const response = await UniversityData.create({ name, code, location });
         res.status(201).json({
           success: true,
           message: `${response.name} is created.`,
@@ -44,7 +45,7 @@ export const createNewEducationData = async (req: Request, res: Response) => {
     } else {
       res.status(400).json({
         success: false,
-        error: `${educationInput.name} already exist.`,
+        error: `${name} already exist.`,
       });
     }
   } else {
@@ -54,7 +55,7 @@ export const createNewEducationData = async (req: Request, res: Response) => {
 
 // Create multi new university or college using json
 export const createMultiEducationData = async (req: Request, res: Response) => {
-  const educationInput: IEducationData[] = req.body;
+  const educationInput: IEducation[] = req.body;
   try {
     educationInput.map(async (val) => {
       await UniversityData.create({
@@ -73,22 +74,13 @@ export const createMultiEducationData = async (req: Request, res: Response) => {
 
 // Patch university or college
 export const patchEducationData = async (req: Request, res: Response) => {
-  const schoolCode: string = req.params.code;
-  const educationInput: IEducationData = req.body;
+  const { code, name, location } = req.body;
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     try {
-      const recordCheck = await UniversityData.findOne({ where: { code: schoolCode } });
+      const recordCheck = await UniversityData.findOne({ where: { code } });
       if (recordCheck) {
-        const updateResponse = await UniversityData.update(
-          { name: educationInput.name, location: educationInput.location },
-          { where: { code: schoolCode }, returning: true },
-        );
-        if (updateResponse[0] === 1) {
-          res.status(200).json({ success: true, data: updateResponse[1][0] });
-        } else {
-          res.status(400);
-        }
+        await updateData(res, UniversityData, { code }, { name, location });
       } else {
         res.status(400).json({
           success: false,
@@ -105,17 +97,11 @@ export const patchEducationData = async (req: Request, res: Response) => {
 
 // Delete university or college
 export const deleteEducationData = async (req: Request, res: Response) => {
-  const schoolCode = req.params.code;
-  const recordCheck = await UniversityData.findOne({ where: { code: schoolCode } });
+  const code = req.params.code;
+  const recordCheck = await UniversityData.findOne({ where: { code } });
   if (recordCheck) {
     try {
-      const deleteResponse = await UniversityData.destroy({ where: { code: schoolCode } });
-      if (deleteResponse === 1) {
-        res.status(200).json({
-          success: true,
-          message: `${recordCheck.name} is deleted.`,
-        });
-      }
+      await deleteData(res, UniversityData, code, recordCheck.name);
     } catch (error) {
       res.status(400).json({ success: false, error });
     }

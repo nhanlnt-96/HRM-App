@@ -4,6 +4,7 @@ interface IUserAccountAttributes {
   id: string;
   username: string;
   password: string;
+  managerId: string;
   level: number;
   status: number;
   updatedBy: string;
@@ -38,6 +39,10 @@ export const UserAccountFactory = (sequelize: Sequelize) => {
     password: {
       allowNull: false,
       type: DataTypes.STRING,
+    },
+    managerId: {
+      allowNull: true,
+      type: DataTypes.UUID,
     },
     level: {
       allowNull: false,

@@ -2,11 +2,13 @@ import express from 'express';
 import {
   createWorkingDepartment,
   createWorkingPosition,
+  deleteWorkingDepartment,
+  deleteWorkingPosition,
   getAllWorkingPosition,
   putWorkingDepartment,
   putWorkingPosition,
 } from '../../controllers/User';
-import { body } from 'express-validator';
+import { body, check } from 'express-validator';
 
 const userRouter = express.Router();
 
@@ -17,7 +19,15 @@ userRouter.get('/position', getAllWorkingPosition);
 userRouter.post('/working-department', body('departmentName').notEmpty().trim(), createWorkingDepartment);
 
 // Put working department
-userRouter.put('/working-department/update', body('departmentName').notEmpty().trim(), putWorkingDepartment);
+userRouter.put(
+  '/working-department',
+  body('departmentName').notEmpty().trim(),
+  body('departmentCode').notEmpty().trim(),
+  putWorkingDepartment,
+);
+
+// Delete working department
+userRouter.delete('/working-department/:code', deleteWorkingDepartment);
 
 // Create working position
 userRouter.post(
@@ -28,6 +38,14 @@ userRouter.post(
 );
 
 // Put working position
-userRouter.put('/working-position/update', body('positionName').notEmpty().trim(), putWorkingPosition);
+userRouter.put(
+  '/working-position',
+  body('positionCode').notEmpty().trim(),
+  body('positionName').notEmpty().trim(),
+  putWorkingPosition,
+);
+
+// Put working position
+userRouter.delete('/working-position/:code', deleteWorkingPosition);
 
 export { userRouter };

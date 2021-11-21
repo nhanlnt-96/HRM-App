@@ -1,5 +1,5 @@
-import { WorkingDepartmentFactory } from './position/WorkingDepartmentFactory';
 import { Sequelize } from 'sequelize';
+import { WorkingDepartmentFactory } from './position';
 import {
   UserAccountFactory,
   UserAccountStatic,
@@ -11,16 +11,10 @@ import {
   UserContractStatic,
   UserInfoFactory,
   UserInfoStatic,
-  UserRoleFactory,
-  UserRoleStatic,
+  UserPositionFactory,
+  UserPositionStatic,
 } from './user';
-import {
-  CareerTitleFactory,
-  CareerTitleStatic,
-  WorkingDepartmentStatic,
-  WorkingPositionFactory,
-  WorkingPositionStatic,
-} from './position';
+import { WorkingDepartmentStatic, WorkingPositionFactory, WorkingPositionStatic } from './position';
 import { UniversityDataFactory, UniversityDataStatic } from './universityData';
 
 const env = process.env.NODE_ENV || 'development';
@@ -30,13 +24,12 @@ export interface IDb {
   sequelize: Sequelize;
   UserAccount: UserAccountStatic;
   UserInfo: UserInfoStatic;
-  UserRole: UserRoleStatic;
+  UserPosition: UserPositionStatic;
   UserCertification: UserCertificationStatic;
   UserSalaryAllowance: UserAllowanceStatic;
   UserContract: UserContractStatic;
   WorkingDepartment: WorkingDepartmentStatic;
   WorkingPosition: WorkingPositionStatic;
-  CareerTitle: CareerTitleStatic;
   UniversityData: UniversityDataStatic;
 }
 
@@ -51,7 +44,7 @@ const sequelize = config.url
 // Table User
 const UserAccount = UserAccountFactory(sequelize);
 const UserInfo = UserInfoFactory(sequelize);
-const UserRole = UserRoleFactory(sequelize);
+const UserPosition = UserPositionFactory(sequelize);
 const UserCertification = UserCertificationFactory(sequelize);
 const UserSalaryAllowance = UserAllowanceFactory(sequelize);
 const UserContract = UserContractFactory(sequelize);
@@ -59,7 +52,7 @@ const UserContract = UserContractFactory(sequelize);
 UserAccount.hasOne(UserInfo, {
   foreignKey: 'userId',
 });
-UserAccount.hasMany(UserRole, {
+UserAccount.hasMany(UserPosition, {
   foreignKey: 'userId',
 });
 UserAccount.hasMany(UserCertification, {
@@ -75,14 +68,12 @@ UserAccount.hasMany(UserContract, {
 // Table working position
 const WorkingDepartment = WorkingDepartmentFactory(sequelize);
 const WorkingPosition = WorkingPositionFactory(sequelize);
-const CareerTitle = CareerTitleFactory(sequelize);
 // Table association
 WorkingDepartment.hasMany(WorkingPosition, {
   foreignKey: 'departmentCode',
 });
-WorkingPosition.hasMany(CareerTitle, {
-  foreignKey: 'positionCode',
-});
+UserAccount.belongsToMany(WorkingPosition, { through: 'hrm_user_position', foreignKey: 'userId' });
+WorkingPosition.belongsToMany(UserAccount, { through: 'hrm_user_position', foreignKey: 'positionCode' });
 
 // Table university data
 const UniversityData = UniversityDataFactory(sequelize);
@@ -91,12 +82,11 @@ export const db: IDb = {
   sequelize,
   UserAccount,
   UserInfo,
-  UserRole,
+  UserPosition,
   UserCertification,
   UserSalaryAllowance,
   UserContract,
   WorkingDepartment,
   WorkingPosition,
-  CareerTitle,
   UniversityData,
 };

@@ -16,17 +16,21 @@ export type WorkingDepartmentStatic = typeof Model & {
 };
 
 export const WorkingDepartmentFactory = (sequelize: Sequelize) => {
-  return <WorkingDepartmentStatic>sequelize.define<IWorkingDepartmentInstance>('hrm_working_department', {
-    departmentCode: {
-      allowNull: false,
-      primaryKey: true,
-      unique: true,
-      autoIncrement: true,
-      type: DataTypes.INTEGER,
+  return <WorkingDepartmentStatic>sequelize.define<IWorkingDepartmentInstance>(
+    'hrm_working_department',
+    {
+      departmentCode: {
+        allowNull: false,
+        primaryKey: true,
+        unique: true,
+        autoIncrement: true,
+        type: DataTypes.INTEGER,
+      },
+      departmentName: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
     },
-    departmentName: {
-      allowNull: false,
-      type: DataTypes.STRING,
-    },
-  });
+    { timestamps: false },
+  );
 };

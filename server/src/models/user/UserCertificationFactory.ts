@@ -20,33 +20,37 @@ export type UserCertificationStatic = typeof Model & {
 };
 
 export const UserCertificationFactory = (sequelize: Sequelize) => {
-  return <UserCertificationStatic>sequelize.define<IUserCertificationInstance>('hrm_user_certification', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: false,
-      unique: true,
-      type: DataTypes.UUID,
+  return <UserCertificationStatic>sequelize.define<IUserCertificationInstance>(
+    'hrm_user_certification',
+    {
+      id: {
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: false,
+        unique: true,
+        type: DataTypes.UUID,
+      },
+      userId: {
+        allowNull: false,
+        type: DataTypes.UUID,
+      },
+      certificationUrl: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      description: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      createdBy: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
+      updatedBy: {
+        allowNull: true,
+        type: DataTypes.STRING,
+      },
     },
-    userId: {
-      allowNull: false,
-      type: DataTypes.UUID,
-    },
-    certificationUrl: {
-      allowNull: false,
-      type: DataTypes.TEXT,
-    },
-    description: {
-      allowNull: false,
-      type: DataTypes.TEXT,
-    },
-    createdBy: {
-      allowNull: false,
-      type: DataTypes.STRING,
-    },
-    updatedBy: {
-      allowNull: true,
-      type: DataTypes.STRING,
-    },
-  });
+    { timestamps: false },
+  );
 };

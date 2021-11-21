@@ -17,20 +17,24 @@ export type WorkingPositionStatic = typeof Model & {
 };
 
 export const WorkingPositionFactory = (sequelize: Sequelize) => {
-  return <WorkingPositionStatic>sequelize.define<IWorkingPositionInstance>('hrm_working_position', {
-    positionCode: {
-      primaryKey: true,
-      unique: true,
-      autoIncrement: true,
-      type: DataTypes.INTEGER,
+  return <WorkingPositionStatic>sequelize.define<IWorkingPositionInstance>(
+    'hrm_working_position',
+    {
+      positionCode: {
+        primaryKey: true,
+        unique: true,
+        autoIncrement: true,
+        type: DataTypes.INTEGER,
+      },
+      positionName: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
+      departmentCode: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+      },
     },
-    positionName: {
-      allowNull: false,
-      type: DataTypes.STRING,
-    },
-    departmentCode: {
-      allowNull: false,
-      type: DataTypes.INTEGER,
-    },
-  });
+    { timestamps: false },
+  );
 };

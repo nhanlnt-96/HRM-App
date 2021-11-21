@@ -3,11 +3,10 @@ import {
   createWorkingDepartment,
   createWorkingPosition,
   getAllWorkingPosition,
-  putCareerTitle,
   putWorkingDepartment,
   putWorkingPosition,
 } from '../../controllers/User';
-import { body, check } from 'express-validator';
+import { body } from 'express-validator';
 
 const userRouter = express.Router();
 

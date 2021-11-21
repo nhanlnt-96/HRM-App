@@ -17,7 +17,7 @@ interface IWorkingData {
 export const getAllWorkingPosition = async (req: Request, res: Response) => {
   try {
     const workingPosition = await WorkingDepartment.findAll({
-      include: [{ model: WorkingPosition }],
+      include: [WorkingPosition],
       order: [['departmentCode', 'ASC']],
     });
     res.status(200).json({

@@ -4,6 +4,7 @@ import {
   createWorkingDepartment,
   createWorkingPosition,
   getAllWorkingPosition,
+  putCareerTitle,
   putWorkingDepartment,
   putWorkingPosition,
 } from '../../controllers/User';
@@ -18,7 +19,7 @@ userRouter.get('/position', getAllWorkingPosition);
 userRouter.post('/working-department', body('departmentName').notEmpty().trim(), createWorkingDepartment);
 
 // Put working department
-userRouter.put('/working-department/update/:code', body('departmentName').notEmpty().trim(), putWorkingDepartment);
+userRouter.put('/working-department/update', body('departmentName').notEmpty().trim(), putWorkingDepartment);
 
 // Create working position
 userRouter.post(
@@ -29,7 +30,7 @@ userRouter.post(
 );
 
 // Put working position
-userRouter.put('/working-position/update/:code', body('positionName').notEmpty().trim(), putWorkingPosition);
+userRouter.put('/working-position/update', body('positionName').notEmpty().trim(), putWorkingPosition);
 
 // Create career title
 userRouter.post(
@@ -38,4 +39,8 @@ userRouter.post(
   body('positionCode').notEmpty().trim(),
   createCareerTitle,
 );
+
+// Put career title
+userRouter.put('/career-title/update', body('titleName').notEmpty().trim(), putCareerTitle);
+
 export { userRouter };

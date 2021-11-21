@@ -4,8 +4,10 @@ import {
   createWorkingDepartment,
   createWorkingPosition,
   getAllWorkingPosition,
+  putWorkingDepartment,
+  putWorkingPosition,
 } from '../../controllers/User';
-import { body } from 'express-validator';
+import { body, check } from 'express-validator';
 
 const userRouter = express.Router();
 
@@ -15,6 +17,9 @@ userRouter.get('/position', getAllWorkingPosition);
 // Create working department
 userRouter.post('/working-department', body('departmentName').notEmpty().trim(), createWorkingDepartment);
 
+// Put working department
+userRouter.put('/working-department/update/:code', body('departmentName').notEmpty().trim(), putWorkingDepartment);
+
 // Create working position
 userRouter.post(
   '/working-position',
@@ -22,6 +27,9 @@ userRouter.post(
   body('positionName').notEmpty().trim(),
   createWorkingPosition,
 );
+
+// Put working position
+userRouter.put('/working-position/update/:code', body('positionName').notEmpty().trim(), putWorkingPosition);
 
 // Create career title
 userRouter.post(

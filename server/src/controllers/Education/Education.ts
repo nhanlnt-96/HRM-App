@@ -18,7 +18,7 @@ export const getAllEducationData = async (req: Request, res: Response) => {
 // Create a new university or college
 export const createNewEducationData = async (req: Request, res: Response) => {
   const educationInput = req.body;
-  const recordCheck = await educationBusiness.checkEducationExist(educationInput);
+  const recordCheck = await educationBusiness.checkEducationExist(educationInput.code);
   const errors = validationResult(req);
 
   if (errors.isEmpty()) {
@@ -63,7 +63,7 @@ export const patchEducationData = async (req: Request, res: Response) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     try {
-      const recordCheck = await educationBusiness.checkEducationExist(educationInput);
+      const recordCheck = await educationBusiness.checkEducationExist(educationInput.code);
       if (recordCheck) {
         const updateResponse = await educationBusiness.updateEducation(educationInput);
         if (updateResponse[0] === 1) {
@@ -86,19 +86,27 @@ export const patchEducationData = async (req: Request, res: Response) => {
 };
 
 // Delete university or college
-// export const deleteEducationData = async (req: Request, res: Response) => {
-//   const code = req.params.code;
-//   const recordCheck = await UniversityData.findOne({ where: { code } });
-//   if (recordCheck) {
-//     try {
-//       await deleteData(res, UniversityData, code, recordCheck.name);
-//     } catch (error) {
-//       res.status(400).json({ success: false, error });
-//     }
-//   } else {
-//     res.status(400).json({
-//       success: false,
-//       error: "University/College doesn't exist.",
-//     });
-//   }
-// };
+export const deleteEducationData = async (req: Request, res: Response) => {
+  const code = req.params.code;
+  const recordCheck = await educationBusiness.checkEducationExist(code);
+  if (recordCheck) {
+    try {
+      const deleteResponse = await educationBusiness.deleteEducation(code);
+      if (deleteResponse === 1) {
+        res.status(200).json({
+          success: true,
+          message: `${recordCheck.name} is deleted.`,
+        });
+      } else {
+        res.status(400).json({ success: false, message: 'Delete failed.' });
+      }
+    } catch (error) {
+      res.status(400).json({ success: false, error });
+    }
+  } else {
+    res.status(400).json({
+      success: false,
+      error: "University/College doesn't exist.",
+    });
+  }
+};

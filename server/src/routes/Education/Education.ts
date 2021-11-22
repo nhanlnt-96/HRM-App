@@ -3,7 +3,7 @@ import { body, check } from 'express-validator';
 import {
   createMultiEducationData,
   createNewEducationData,
-  // deleteEducationData,
+  deleteEducationData,
   getAllEducationData,
   patchEducationData,
 } from '../../controllers/Education';
@@ -35,6 +35,6 @@ educationRouter.patch(
 );
 
 // Put university or college
-// educationRouter.delete('/delete/:code', deleteEducationData);
+educationRouter.delete('/:code', deleteEducationData);
 
 export { educationRouter };

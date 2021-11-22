@@ -8,8 +8,8 @@ export interface IEducationData {
 
 const { UniversityData } = db;
 
-export const checkEducationExist = async (body: IEducationData) => {
-  return await UniversityData.findOne({ where: { name: body.name } });
+export const checkEducationExist = async (code: string) => {
+  return await UniversityData.findOne({ where: { code } });
 };
 
 export const getEducation = async () => {
@@ -33,4 +33,8 @@ export const createMultiEducation = async (body: IEducationData[]) => {
 export const updateEducation = async (body: IEducationData) => {
   const { name, code, location } = body;
   return await UniversityData.update({ name, location }, { where: { code }, returning: true });
+};
+
+export const deleteEducation = async (code: string) => {
+  return await UniversityData.destroy({ where: { code } });
 };

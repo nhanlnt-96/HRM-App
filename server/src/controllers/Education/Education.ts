@@ -1,11 +1,19 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
-import * as educationBusiness from './Business';
+import {
+  checkEducationExist,
+  createEducation,
+  createMultiEducation,
+  deleteEducation,
+  getEducation,
+  IEducationData,
+  updateEducation,
+} from './Business';
 
 // Get university or college
 export const getAllEducationData = async (req: Request, res: Response) => {
   try {
-    const educationData = await educationBusiness.getEducation();
+    const educationData = await getEducation();
     res.status(200).json({
       success: true,
       data: educationData,
@@ -18,13 +26,13 @@ export const getAllEducationData = async (req: Request, res: Response) => {
 // Create a new university or college
 export const createNewEducationData = async (req: Request, res: Response) => {
   const educationInput = req.body;
-  const recordCheck = await educationBusiness.checkEducationExist(educationInput.code);
+  const recordCheck = await checkEducationExist(educationInput.code);
   const errors = validationResult(req);
 
   if (errors.isEmpty()) {
     if (!recordCheck) {
       try {
-        const response = await educationBusiness.createEducation(educationInput);
+        const response = await createEducation(educationInput);
         res.status(201).json({
           success: true,
           message: `${response.name} is created.`,
@@ -46,9 +54,9 @@ export const createNewEducationData = async (req: Request, res: Response) => {
 
 // Create multi new university or college using json
 export const createMultiEducationData = async (req: Request, res: Response) => {
-  const educationInput: educationBusiness.IEducationData[] = req.body;
+  const educationInput: IEducationData[] = req.body;
   try {
-    await educationBusiness.createMultiEducation(educationInput);
+    await createMultiEducation(educationInput);
     res.status(201).json({
       success: true,
     });
@@ -63,9 +71,9 @@ export const patchEducationData = async (req: Request, res: Response) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     try {
-      const recordCheck = await educationBusiness.checkEducationExist(educationInput.code);
+      const recordCheck = await checkEducationExist(educationInput.code);
       if (recordCheck) {
-        const updateResponse = await educationBusiness.updateEducation(educationInput);
+        const updateResponse = await updateEducation(educationInput);
         if (updateResponse[0] === 1) {
           res.status(200).json({ success: true, data: updateResponse[1][0] });
         } else {
@@ -88,10 +96,10 @@ export const patchEducationData = async (req: Request, res: Response) => {
 // Delete university or college
 export const deleteEducationData = async (req: Request, res: Response) => {
   const code = req.params.code;
-  const recordCheck = await educationBusiness.checkEducationExist(code);
+  const recordCheck = await checkEducationExist(code);
   if (recordCheck) {
     try {
-      const deleteResponse = await educationBusiness.deleteEducation(code);
+      const deleteResponse = await deleteEducation(code);
       if (deleteResponse === 1) {
         res.status(200).json({
           success: true,

@@ -14,3 +14,4 @@
 - [005]: Edit table name and association of table
 - [006]: Update new field to user account table
 - [007]: Make code in controllers/Education.ts clearly
+- [008]: Make code in controllers/WorkingPosition.ts clearly

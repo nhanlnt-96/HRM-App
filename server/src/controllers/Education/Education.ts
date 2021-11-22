@@ -1,20 +1,11 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
-import { db } from '../../models';
-import { checkDataExist, deleteData, updateData } from '../../helpers';
-
-interface IEducation {
-  name: string;
-  location: string;
-  code: string;
-}
-
-const { UniversityData } = db;
+import * as educationBusiness from './Business';
 
 // Get university or college
 export const getAllEducationData = async (req: Request, res: Response) => {
   try {
-    const educationData = await UniversityData.findAll({ order: [['code', 'ASC']] });
+    const educationData = await educationBusiness.getEducation();
     res.status(200).json({
       success: true,
       data: educationData,
@@ -26,14 +17,14 @@ export const getAllEducationData = async (req: Request, res: Response) => {
 
 // Create a new university or college
 export const createNewEducationData = async (req: Request, res: Response) => {
-  const { name, code, location } = req.body;
-  const recordCheck = await checkDataExist(UniversityData, { name });
+  const educationInput = req.body;
+  const recordCheck = await educationBusiness.checkEducationExist(educationInput);
   const errors = validationResult(req);
 
   if (errors.isEmpty()) {
     if (!recordCheck) {
       try {
-        const response = await UniversityData.create({ name, code, location });
+        const response = await educationBusiness.createEducation(educationInput);
         res.status(201).json({
           success: true,
           message: `${response.name} is created.`,
@@ -45,7 +36,7 @@ export const createNewEducationData = async (req: Request, res: Response) => {
     } else {
       res.status(400).json({
         success: false,
-        error: `${name} already exist.`,
+        error: `${educationInput.name} already exist.`,
       });
     }
   } else {
@@ -55,15 +46,9 @@ export const createNewEducationData = async (req: Request, res: Response) => {
 
 // Create multi new university or college using json
 export const createMultiEducationData = async (req: Request, res: Response) => {
-  const educationInput: IEducation[] = req.body;
+  const educationInput: educationBusiness.IEducationData[] = req.body;
   try {
-    educationInput.map(async (val) => {
-      await UniversityData.create({
-        name: val.name.trim(),
-        code: val.code.trim(),
-        location: val.location.trim(),
-      });
-    });
+    await educationBusiness.createMultiEducation(educationInput);
     res.status(201).json({
       success: true,
     });
@@ -74,13 +59,18 @@ export const createMultiEducationData = async (req: Request, res: Response) => {
 
 // Patch university or college
 export const patchEducationData = async (req: Request, res: Response) => {
-  const { code, name, location } = req.body;
+  const educationInput = req.body;
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     try {
-      const recordCheck = await UniversityData.findOne({ where: { code } });
+      const recordCheck = await educationBusiness.checkEducationExist(educationInput);
       if (recordCheck) {
-        await updateData(res, UniversityData, { code }, { name, location });
+        const updateResponse = await educationBusiness.updateEducation(educationInput);
+        if (updateResponse[0] === 1) {
+          res.status(200).json({ success: true, data: updateResponse[1][0] });
+        } else {
+          res.status(400).json({ success: false, message: 'Update failed.' });
+        }
       } else {
         res.status(400).json({
           success: false,
@@ -96,19 +86,19 @@ export const patchEducationData = async (req: Request, res: Response) => {
 };
 
 // Delete university or college
-export const deleteEducationData = async (req: Request, res: Response) => {
-  const code = req.params.code;
-  const recordCheck = await UniversityData.findOne({ where: { code } });
-  if (recordCheck) {
-    try {
-      await deleteData(res, UniversityData, code, recordCheck.name);
-    } catch (error) {
-      res.status(400).json({ success: false, error });
-    }
-  } else {
-    res.status(400).json({
-      success: false,
-      error: "University/College doesn't exist.",
-    });
-  }
-};
+// export const deleteEducationData = async (req: Request, res: Response) => {
+//   const code = req.params.code;
+//   const recordCheck = await UniversityData.findOne({ where: { code } });
+//   if (recordCheck) {
+//     try {
+//       await deleteData(res, UniversityData, code, recordCheck.name);
+//     } catch (error) {
+//       res.status(400).json({ success: false, error });
+//     }
+//   } else {
+//     res.status(400).json({
+//       success: false,
+//       error: "University/College doesn't exist.",
+//     });
+//   }
+// };

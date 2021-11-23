@@ -9,17 +9,15 @@ import {
   IEducationData,
   updateEducation,
 } from './Business';
+import { ApiError, ApiSuccess } from '../../shared/helper';
 
 // Get university or college
 export const getAllEducationData = async (req: Request, res: Response) => {
   try {
     const educationData = await getEducation();
-    res.status(200).json({
-      success: true,
-      data: educationData,
-    });
+    ApiSuccess(200, educationData, res);
   } catch (error) {
-    res.status(400).json(error);
+    ApiError(400, error, res);
   }
 };
 
@@ -33,22 +31,22 @@ export const createNewEducationData = async (req: Request, res: Response) => {
     if (!recordCheck) {
       try {
         const response = await createEducation(educationInput);
-        res.status(201).json({
-          success: true,
-          message: `${response.name} is created.`,
-          data: response,
-        });
+        ApiSuccess(
+          201,
+          {
+            message: `${response.name} is created.`,
+            data: response,
+          },
+          res,
+        );
       } catch (error) {
-        res.status(400).json({ success: false, error });
+        ApiError(400, error, res);
       }
     } else {
-      res.status(400).json({
-        success: false,
-        error: `${educationInput.name} already exist.`,
-      });
+      ApiError(400, `${educationInput.name} already exist.`, res);
     }
   } else {
-    res.status(400).json({ success: false, errors: errors.array() });
+    ApiError(400, errors.array(), res);
   }
 };
 
@@ -57,11 +55,9 @@ export const createMultiEducationData = async (req: Request, res: Response) => {
   const educationInput: IEducationData[] = req.body;
   try {
     await createMultiEducation(educationInput);
-    res.status(201).json({
-      success: true,
-    });
+    ApiSuccess(201, 'Create complete', res);
   } catch (error) {
-    res.status(400).json({ success: false, error });
+    ApiError(400, error, res);
   }
 };
 
@@ -75,21 +71,18 @@ export const patchEducationData = async (req: Request, res: Response) => {
       if (recordCheck) {
         const updateResponse = await updateEducation(educationInput);
         if (updateResponse[0] === 1) {
-          res.status(200).json({ success: true, data: updateResponse[1][0] });
+          ApiSuccess(200, updateResponse[1][0], res);
         } else {
-          res.status(400).json({ success: false, message: 'Update failed.' });
+          ApiError(400, 'Update failed.', res);
         }
       } else {
-        res.status(400).json({
-          success: false,
-          error: "University/College doesn't exist.",
-        });
+        ApiError(400, "University/College doesn't exist.", res);
       }
     } catch (error) {
-      res.status(400).json({ success: false, error });
+      ApiError(400, error, res);
     }
   } else {
-    res.status(400).json({ success: false, errors: errors.array() });
+    ApiError(400, errors.array(), res);
   }
 };
 
@@ -101,20 +94,14 @@ export const deleteEducationData = async (req: Request, res: Response) => {
     try {
       const deleteResponse = await deleteEducation(code);
       if (deleteResponse === 1) {
-        res.status(200).json({
-          success: true,
-          message: `${recordCheck.name} is deleted.`,
-        });
+        ApiSuccess(200, `${recordCheck.name} is deleted.`, res);
       } else {
-        res.status(400).json({ success: false, message: 'Delete failed.' });
+        ApiError(400, 'Delete failed.', res);
       }
     } catch (error) {
-      res.status(400).json({ success: false, error });
+      ApiError(400, error, res);
     }
   } else {
-    res.status(400).json({
-      success: false,
-      error: "University/College doesn't exist.",
-    });
+    ApiError(400, "University/College doesn't exist.", res);
   }
 };

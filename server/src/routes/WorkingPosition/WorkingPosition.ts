@@ -7,13 +7,13 @@ import {
   getAllWorkingPosition,
   putWorkingDepartment,
   putWorkingPosition,
-} from '../../controllers/User';
-import { body, check } from 'express-validator';
+} from '../../controllers/WorkingPosition';
+import { body } from 'express-validator';
 
 const userRouter = express.Router();
 
 // Get working position
-userRouter.get('/position', getAllWorkingPosition);
+userRouter.get('/', getAllWorkingPosition);
 
 // Create working department
 userRouter.post('/working-dept', body('departmentName').notEmpty().trim(), createWorkingDepartment);

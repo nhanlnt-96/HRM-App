@@ -1,2 +1,1 @@
-export * from './WorkingPosition';
-export * from './Business';
+export * from './User';

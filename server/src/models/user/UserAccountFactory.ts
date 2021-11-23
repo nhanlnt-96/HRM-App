@@ -47,10 +47,12 @@ export const UserAccountFactory = (sequelize: Sequelize) => {
     level: {
       allowNull: false,
       type: DataTypes.INTEGER,
+      defaultValue: 2
     },
     status: {
       allowNull: false,
       type: DataTypes.INTEGER,
+      defaultValue: 1
     },
     createdBy: {
       allowNull: false,

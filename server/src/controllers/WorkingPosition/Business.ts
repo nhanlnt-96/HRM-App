@@ -5,7 +5,7 @@ interface IWorkingPosition {
   departmentCode: number;
 }
 
-const { WorkingDepartment, WorkingPosition } = db;
+const { WorkingDepartment, WorkingPosition,UserAccount } = db;
 
 export const checkWorkingDeptExist = async (departmentName: string, departmentCode?: number | string) => {
   return departmentCode

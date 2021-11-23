@@ -12,17 +12,15 @@ import {
   updateWorkingPos,
 } from './Business';
 import { db } from '../../models';
+import { ApiError, ApiSuccess } from '../../shared/helper';
 
 // Get working position
 export const getAllWorkingPosition = async (req: Request, res: Response) => {
   try {
     const workingPosition = await getWorkingPosition();
-    res.status(200).json({
-      success: true,
-      data: workingPosition,
-    });
+    ApiSuccess(200, workingPosition, res);
   } catch (error) {
-    res.status(400).json(error);
+    ApiError(400, error, res);
   }
 };
 
@@ -35,22 +33,22 @@ export const createWorkingDepartment = async (req: Request, res: Response) => {
     if (!recordCheck) {
       try {
         const createResponse = await createWorkingDept(departmentName);
-        res.status(201).json({
-          success: true,
-          message: `${createResponse.departmentName} is created.`,
-          data: createResponse,
-        });
+        ApiSuccess(
+          201,
+          {
+            message: `${createResponse.departmentName} is created.`,
+            data: createResponse,
+          },
+          res,
+        );
       } catch (error) {
-        res.status(400).json({ success: false, error });
+        ApiError(400, error, res);
       }
     } else {
-      res.status(400).json({
-        success: false,
-        error: `${departmentName} already exist.`,
-      });
+      ApiError(400, `${departmentName} already exist.`, res);
     }
   } else {
-    res.status(400).json({ success: false, errors: errors.array() });
+    ApiError(400, errors.array(), res);
   }
 };
 
@@ -66,27 +64,21 @@ export const putWorkingDepartment = async (req: Request, res: Response) => {
         if (!checkWorkingDeptName) {
           const updateResponse = await updateWorkingDept(departmentName, departmentCode);
           if (updateResponse[0] === 1) {
-            res.status(200).json({ success: true, data: updateResponse[1][0] });
+            ApiSuccess(200, updateResponse[1][0], res);
           } else {
-            res.status(400).json({ success: false, message: 'Update failed.' });
+            ApiError(400, 'Update failed.', res);
           }
         } else {
-          res.status(400).json({
-            success: false,
-            error: `${departmentName} already exist.`,
-          });
+          ApiError(400, `${departmentName} already exist.`, res);
         }
       } else {
-        res.status(400).json({
-          success: false,
-          error: `${departmentName} doesn't exist.`,
-        });
+        ApiError(400, `${departmentName} doesn't exist.`, res);
       }
     } catch (error) {
-      res.status(400).json({ success: false, error });
+      ApiError(400, error, res);
     }
   } else {
-    res.status(400).json({ success: false, errors: errors.array() });
+    ApiError(400, errors.array(), res);
   }
 };
 
@@ -101,21 +93,15 @@ export const deleteWorkingDepartment = async (req: Request, res: Response) => {
         deleteResponse === 1 ||
         (typeof deleteResponse !== 'number' && deleteResponse?.deptDel === 1 && deleteResponse?.posDel === 0)
       ) {
-        res.status(200).json({
-          success: true,
-          message: `${recordCheck.departmentName} is deleted.`,
-        });
+        ApiSuccess(200, `${recordCheck.departmentName} is deleted.`, res);
       } else {
-        res.status(400).json({ success: false, message: 'Delete failed.' });
+        ApiError(400, 'Delete failed.', res);
       }
     } catch (error) {
-      res.status(400).json({ success: false, error });
+      ApiError(400, error, res);
     }
   } else {
-    res.status(400).json({
-      success: false,
-      error: "Working department doesn't exist.",
-    });
+    ApiError(400, "Working department doesn't exist.", res);
   }
 };
 
@@ -130,28 +116,25 @@ export const createWorkingPosition = async (req: Request, res: Response) => {
       if (!recordCheck) {
         try {
           const createResponse = await createWorkingPos(posInput);
-          res.status(201).json({
-            success: true,
-            message: `${createResponse.positionName} is created.`,
-            data: createResponse,
-          });
+          ApiSuccess(
+            201,
+            {
+              message: `${createResponse.positionName} is created.`,
+              data: createResponse,
+            },
+            res,
+          );
         } catch (error) {
-          res.status(400).json({ success: false, error });
+          ApiError(400, error, res);
         }
       } else {
-        res.status(400).json({
-          success: false,
-          error: `${posInput.positionName} already exist.`,
-        });
+        ApiError(400, `${posInput.positionName} already exist.`, res);
       }
     } else {
-      res.status(400).json({
-        success: false,
-        error: `Working department doesn't exist.`,
-      });
+      ApiError(400, "Working department doesn't exist.", res);
     }
   } else {
-    res.status(400).json({ success: false, errors: errors.array() });
+    ApiError(400, errors.array(), res);
   }
 };
 
@@ -167,27 +150,21 @@ export const putWorkingPosition = async (req: Request, res: Response) => {
         if (!checkPositionName) {
           const updateResponse = await updateWorkingPos(posInput);
           if (updateResponse[0] === 1) {
-            res.status(200).json({ success: true, data: updateResponse[1][0] });
+            ApiSuccess(200, updateResponse[1][0], res);
           } else {
-            res.status(400).json({ success: false, message: 'Update failed.' });
+            ApiError(400, 'Update failed.', res);
           }
         } else {
-          res.status(400).json({
-            success: false,
-            error: `${posInput.positionName} already exist.`,
-          });
+          ApiError(400, `${posInput.positionName} already exist.`, res);
         }
       } else {
-        res.status(400).json({
-          success: false,
-          error: `${posInput.positionName} doesn't exist.`,
-        });
+        ApiError(400, `${posInput.positionName} doesn't exist.`, res);
       }
     } catch (error) {
-      res.status(400).json({ success: false, error });
+      ApiError(400, error, res);
     }
   } else {
-    res.status(400).json({ success: false, errors: errors.array() });
+    ApiError(400, errors.array(), res);
   }
 };
 
@@ -199,20 +176,14 @@ export const deleteWorkingPosition = async (req: Request, res: Response) => {
     try {
       const deleteResponse = await deleteWorkingPos(positionCode);
       if (deleteResponse === 1) {
-        res.status(200).json({
-          success: true,
-          message: `${recordCheck.positionName} is deleted.`,
-        });
+        ApiSuccess(200, `${recordCheck.positionName} is deleted.`, res);
       } else {
-        res.status(400).json({ success: false, message: 'Delete failed.' });
+        ApiError(400, 'Delete failed.', res);
       }
     } catch (error) {
-      res.status(400).json({ success: false, error });
+      ApiError(400, error, res);
     }
   } else {
-    res.status(400).json({
-      success: false,
-      error: "Working position doesn't exist.",
-    });
+    ApiError(400, "Working position doesn't exist.", res);
   }
 };

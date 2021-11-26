@@ -1,10 +1,5 @@
 import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
-
-interface IUserPositionAttributes {
-  id: string;
-  userId: string;
-  positionCode: number;
-}
+import { IUserPositionAttributes } from './types';
 
 type IUserRoleCreationAttributes = Optional<IUserPositionAttributes, 'id'>;
 

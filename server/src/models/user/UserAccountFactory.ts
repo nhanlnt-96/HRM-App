@@ -1,15 +1,5 @@
 import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
-
-interface IUserAccountAttributes {
-  id: string;
-  username: string;
-  password: string;
-  managerId: string;
-  level: number;
-  status: number;
-  updatedBy: string;
-  createdBy: string;
-}
+import { IUserAccountAttributes } from './types';
 
 type IUserAccountCreationAttributes = Optional<IUserAccountAttributes, 'id'>;
 
@@ -47,12 +37,12 @@ export const UserAccountFactory = (sequelize: Sequelize) => {
     level: {
       allowNull: false,
       type: DataTypes.INTEGER,
-      defaultValue: 2
+      defaultValue: 2,
     },
     status: {
       allowNull: false,
       type: DataTypes.INTEGER,
-      defaultValue: 1
+      defaultValue: 1,
     },
     createdBy: {
       allowNull: false,

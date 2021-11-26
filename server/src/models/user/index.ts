@@ -4,3 +4,4 @@ export * from './UserCertificationFactory';
 export * from './UserContractFactory';
 export * from './UserInfoFactory';
 export * from './UserPositionFactory';
+export * from './types';

@@ -1,13 +1,5 @@
 import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
-
-interface IUserCertificationAttributes {
-  id: number;
-  userId: string;
-  certificationUrl: string;
-  description: string;
-  updatedBy: string;
-  createdBy: string;
-}
+import { IUserCertificationAttributes } from './types';
 
 type IUserCertificationCreationAttributes = Optional<IUserCertificationAttributes, 'id'>;
 

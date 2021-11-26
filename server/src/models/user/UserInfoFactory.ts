@@ -1,22 +1,5 @@
 import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
-
-interface IUserInfoAttributes {
-  id: string;
-  userId: string;
-  avatarUrl: string;
-  fullName: string;
-  position: number;
-  dob: Date;
-  phoneNumber: string;
-  cardId: string;
-  issuedOn: Date;
-  issuedAt: string;
-  currentAddress: string;
-  education: string;
-  majorIn: string;
-  salaryRange: string;
-  workPermit: boolean;
-}
+import { IUserInfoAttributes } from './types';
 
 type IUserInfoCreationAttributes = Optional<IUserInfoAttributes, 'id'>;
 
@@ -50,10 +33,6 @@ export const UserInfoFactory = (sequelize: Sequelize) => {
       fullName: {
         allowNull: false,
         type: DataTypes.STRING,
-      },
-      position: {
-        allowNull: false,
-        type: DataTypes.INTEGER,
       },
       dob: {
         allowNull: false,

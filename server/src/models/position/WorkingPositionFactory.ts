@@ -1,12 +1,7 @@
 import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
+import { IWorkingPositionAttributes } from './types';
 
-interface IWorkingPositionAttributes {
-  positionCode: string;
-  positionName: string;
-  departmentCode: number;
-}
-
-type IWorkingPositionCreationAttributes = Optional<IWorkingPositionAttributes, 'positionCode'>;
+type IWorkingPositionCreationAttributes = Optional<IWorkingPositionAttributes, 'id'>;
 
 export interface IWorkingPositionInstance
   extends Model<IWorkingPositionAttributes, IWorkingPositionCreationAttributes>,
@@ -20,19 +15,25 @@ export const WorkingPositionFactory = (sequelize: Sequelize) => {
   return <WorkingPositionStatic>sequelize.define<IWorkingPositionInstance>(
     'hrm_working_position',
     {
-      positionCode: {
+      id: {
+        allowNull: false,
         primaryKey: true,
         unique: true,
-        autoIncrement: true,
-        type: DataTypes.INTEGER,
+        autoIncrement: false,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+      },
+      positionCode: {
+        allowNull: false,
+        type: DataTypes.STRING,
       },
       positionName: {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      departmentCode: {
+      departmentId: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
       },
     },
     { timestamps: false },

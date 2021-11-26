@@ -3,6 +3,7 @@ import { validationResult } from 'express-validator';
 import {
   checkWorkingDeptExist,
   checkWorkingPosExist,
+  convertToCode,
   createWorkingDept,
   createWorkingPos,
   deleteWorkingDept,
@@ -26,13 +27,15 @@ export const getAllWorkingPosition = async (req: Request, res: Response) => {
 
 // Create working department
 export const createWorkingDepartment = async (req: Request, res: Response) => {
-  const { departmentName } = req.body;
-  const recordCheck = await checkWorkingDeptExist(departmentName);
+  const userInput = req.body;
+  // get first each character in string
+  userInput.departmentCode = convertToCode(userInput.departmentName);
+  const recordCheck = await checkWorkingDeptExist(userInput.departmentName);
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     if (!recordCheck) {
       try {
-        const createResponse = await createWorkingDept(departmentName);
+        const createResponse = await createWorkingDept(userInput);
         ApiSuccess(
           201,
           {
@@ -45,7 +48,7 @@ export const createWorkingDepartment = async (req: Request, res: Response) => {
         ApiError(400, error, res);
       }
     } else {
-      ApiError(400, `${departmentName} already exist.`, res);
+      ApiError(400, `${userInput.departmentName} already exist.`, res);
     }
   } else {
     ApiError(400, errors.array(), res);
@@ -54,25 +57,28 @@ export const createWorkingDepartment = async (req: Request, res: Response) => {
 
 // Put working department
 export const putWorkingDepartment = async (req: Request, res: Response) => {
-  const { departmentName, departmentCode } = req.body;
+  const userInput = req.body;
+  const id = req.params.code;
+  // get first each character in string
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     try {
-      const recordCheck = await checkWorkingDeptExist('', departmentCode);
-      const checkWorkingDeptName = await checkWorkingDeptExist(departmentName);
+      const recordCheck = await checkWorkingDeptExist('', id);
+      const checkWorkingDeptName = await checkWorkingDeptExist(userInput.departmentName);
       if (recordCheck) {
         if (!checkWorkingDeptName) {
-          const updateResponse = await updateWorkingDept(departmentName, departmentCode);
+          userInput.departmentCode = convertToCode(userInput.departmentName);
+          const updateResponse = await updateWorkingDept(userInput, id);
           if (updateResponse[0] === 1) {
             ApiSuccess(200, updateResponse[1][0], res);
           } else {
             ApiError(400, 'Update failed.', res);
           }
         } else {
-          ApiError(400, `${departmentName} already exist.`, res);
+          ApiError(400, `${userInput.departmentName} already exist.`, res);
         }
       } else {
-        ApiError(400, `${departmentName} doesn't exist.`, res);
+        ApiError(400, `${userInput.departmentName} doesn't exist.`, res);
       }
     } catch (error) {
       ApiError(400, error, res);
@@ -84,11 +90,11 @@ export const putWorkingDepartment = async (req: Request, res: Response) => {
 
 // Delete working department
 export const deleteWorkingDepartment = async (req: Request, res: Response) => {
-  const departmentCode = req.params.code;
-  const recordCheck = await checkWorkingDeptExist('', departmentCode);
+  const id = req.params.code;
+  const recordCheck = await checkWorkingDeptExist('', id);
   if (recordCheck) {
     try {
-      const deleteResponse = await deleteWorkingDept(departmentCode);
+      const deleteResponse = await deleteWorkingDept(id);
       if (
         deleteResponse === 1 ||
         (typeof deleteResponse !== 'number' && deleteResponse?.deptDel === 1 && deleteResponse?.posDel === 0)
@@ -108,8 +114,9 @@ export const deleteWorkingDepartment = async (req: Request, res: Response) => {
 // Create working position
 export const createWorkingPosition = async (req: Request, res: Response) => {
   const posInput = req.body;
+  posInput.positionCode = convertToCode(posInput.positionName);
   const recordCheck = await checkWorkingPosExist(posInput);
-  const checkDept = await checkWorkingDeptExist('', posInput.departmentCode);
+  const checkDept = await checkWorkingDeptExist('', posInput.departmentId);
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     if (checkDept) {
@@ -141,14 +148,16 @@ export const createWorkingPosition = async (req: Request, res: Response) => {
 // Put working position
 export const putWorkingPosition = async (req: Request, res: Response) => {
   const posInput = req.body;
+  const id = req.params.code;
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     try {
-      const recordCheck = await checkWorkingPosExist(null, posInput.positionCode);
-      const checkPositionName = await db.WorkingPosition.findOne({ where: { positionName: posInput.positionName } });
+      const recordCheck = await checkWorkingPosExist(null, id);
+      const checkPositionName = await checkWorkingPosExist(posInput);
       if (recordCheck) {
         if (!checkPositionName) {
-          const updateResponse = await updateWorkingPos(posInput);
+          posInput.positionCode = convertToCode(posInput.positionName);
+          const updateResponse = await updateWorkingPos(posInput, id);
           if (updateResponse[0] === 1) {
             ApiSuccess(200, updateResponse[1][0], res);
           } else {
@@ -170,11 +179,11 @@ export const putWorkingPosition = async (req: Request, res: Response) => {
 
 // Delete working position
 export const deleteWorkingPosition = async (req: Request, res: Response) => {
-  const positionCode = req.params.code;
-  const recordCheck = await checkWorkingPosExist(null, positionCode);
+  const id = req.params.code;
+  const recordCheck = await checkWorkingPosExist(null, id);
   if (recordCheck) {
     try {
-      const deleteResponse = await deleteWorkingPos(positionCode);
+      const deleteResponse = await deleteWorkingPos(id);
       if (deleteResponse === 1) {
         ApiSuccess(200, `${recordCheck.positionName} is deleted.`, res);
       } else {

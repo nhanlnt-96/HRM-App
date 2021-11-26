@@ -21,6 +21,7 @@ export const UserAccountFactory = (sequelize: Sequelize) => {
       primaryKey: true,
       unique: true,
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
     },
     username: {
       allowNull: false,

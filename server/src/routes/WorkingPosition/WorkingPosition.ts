@@ -16,13 +16,18 @@ const userRouter = express.Router();
 userRouter.get('/', getAllWorkingPosition);
 
 // Create working department
-userRouter.post('/working-dept', body('departmentName').notEmpty().trim(), createWorkingDepartment);
+userRouter.post(
+  '/working-dept',
+  body('departmentName').notEmpty().trim(),
+  body('createdBy').notEmpty().trim(),
+  createWorkingDepartment,
+);
 
 // Put working department
 userRouter.put(
-  '/working-dept',
+  '/working-dept/:code',
   body('departmentName').notEmpty().trim(),
-  body('departmentCode').notEmpty().trim(),
+  body('updatedBy').notEmpty().trim(),
   putWorkingDepartment,
 );
 
@@ -32,20 +37,15 @@ userRouter.delete('/working-dept/:code', deleteWorkingDepartment);
 // Create working position
 userRouter.post(
   '/working-position',
-  body('departmentCode').notEmpty().trim(),
+  body('departmentId').notEmpty().trim(),
   body('positionName').notEmpty().trim(),
   createWorkingPosition,
 );
 
 // Put working position
-userRouter.put(
-  '/working-position',
-  body('positionCode').notEmpty().trim(),
-  body('positionName').notEmpty().trim(),
-  putWorkingPosition,
-);
+userRouter.put('/working-position/:code', body('positionName').notEmpty().trim(), putWorkingPosition);
 
-// Put working position
+// Delete working position
 userRouter.delete('/working-position/:code', deleteWorkingPosition);
 
 export { userRouter };

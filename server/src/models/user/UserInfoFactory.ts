@@ -21,6 +21,7 @@ export const UserInfoFactory = (sequelize: Sequelize) => {
         unique: true,
         autoIncrement: false,
         type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
       },
       userId: {
         allowNull: false,

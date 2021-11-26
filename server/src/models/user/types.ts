@@ -57,5 +57,5 @@ export interface IUserInfoAttributes {
 export interface IUserPositionAttributes {
   id: string;
   userId: string;
-  positionCode: number;
+  positionId: number;
 }

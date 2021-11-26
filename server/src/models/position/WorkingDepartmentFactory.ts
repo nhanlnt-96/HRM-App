@@ -1,36 +1,43 @@
 import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
+import { IWorkingDepartmentAttributes } from './types';
 
-interface IWorkingDepartmentAttributes {
-  departmentCode: number;
-  departmentName: string;
-}
-
-type IWorkingDepartmentCreationAttributes = Optional<IWorkingDepartmentAttributes, 'departmentCode'>;
+type IWorkingDepartmentCreationAttributes = Optional<IWorkingDepartmentAttributes, 'id'>;
 
 export interface IWorkingDepartmentInstance
   extends Model<IWorkingDepartmentAttributes, IWorkingDepartmentCreationAttributes>,
-    IWorkingDepartmentAttributes {}
+    IWorkingDepartmentAttributes {
+  createdAt?: Date;
+  updatedAt?: Date;
+}
 
 export type WorkingDepartmentStatic = typeof Model & {
   new (values?: object, options?: BuildOptions): IWorkingDepartmentInstance;
 };
 
 export const WorkingDepartmentFactory = (sequelize: Sequelize) => {
-  return <WorkingDepartmentStatic>sequelize.define<IWorkingDepartmentInstance>(
-    'hrm_working_department',
-    {
-      departmentCode: {
-        allowNull: false,
-        primaryKey: true,
-        unique: true,
-        autoIncrement: true,
-        type: DataTypes.INTEGER,
-      },
-      departmentName: {
-        allowNull: false,
-        type: DataTypes.STRING,
-      },
+  return <WorkingDepartmentStatic>sequelize.define<IWorkingDepartmentInstance>('hrm_working_department', {
+    id: {
+      primaryKey: true,
+      unique: true,
+      autoIncrement: false,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
     },
-    { timestamps: false },
-  );
+    departmentCode: {
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
+    departmentName: {
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
+    createdBy: {
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
+    updatedBy: {
+      allowNull: true,
+      type: DataTypes.STRING,
+    },
+  });
 };

@@ -21,6 +21,7 @@ export const UserCertificationFactory = (sequelize: Sequelize) => {
         autoIncrement: false,
         unique: true,
         type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
       },
       userId: {
         allowNull: false,

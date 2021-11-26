@@ -22,9 +22,9 @@ export const UserPositionFactory = (sequelize: Sequelize) => {
         autoIncrement: true,
         type: DataTypes.INTEGER,
       },
-      positionCode: {
+      positionId: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
       },
       userId: {
         allowNull: false,

@@ -1,15 +1,29 @@
 import { db } from '../../models';
+import { IWorkingDepartmentAttributes, IWorkingPositionAttributes } from '../../models/position';
 
-interface IWorkingPosition {
-  positionName: string;
-  departmentCode: number;
-}
+const { WorkingDepartment, WorkingPosition } = db;
 
-const { WorkingDepartment, WorkingPosition,UserAccount } = db;
+export const convertToCode = (text: string) => {
+  text = text.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+  text = text.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+  text = text.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+  text = text.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+  text = text.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+  text = text.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+  text = text.replace(/đ/gi, 'd');
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  text = text
+    .match(/\b(\w)/g)
+    .join('')
+    .toUpperCase();
 
-export const checkWorkingDeptExist = async (departmentName: string, departmentCode?: number | string) => {
-  return departmentCode
-    ? await WorkingDepartment.findOne({ where: { departmentCode } })
+  return text;
+};
+
+export const checkWorkingDeptExist = async (departmentName: string, id?: string) => {
+  return id
+    ? await WorkingDepartment.findOne({ where: { id } })
     : await WorkingDepartment.findOne({ where: { departmentName } });
 };
 
@@ -20,40 +34,35 @@ export const getWorkingPosition = async () => {
   });
 };
 
-export const createWorkingDept = async (departmentName: string) => {
-  return await WorkingDepartment.create({ departmentName });
+export const createWorkingDept = async (body: IWorkingDepartmentAttributes) => {
+  return await WorkingDepartment.create(body);
 };
 
-export const updateWorkingDept = async (departmentName: string, departmentCode: number) => {
-  return await WorkingDepartment.update({ departmentName }, { where: { departmentCode }, returning: true });
+export const updateWorkingDept = async (body: IWorkingDepartmentAttributes, id: string) => {
+  return await WorkingDepartment.update(body, { where: { id }, returning: true });
 };
 
-export const deleteWorkingDept = async (departmentCode: string | number) => {
-  const checkDeptChild = await WorkingPosition.findOne({ where: { departmentCode } });
+export const deleteWorkingDept = async (id: string) => {
+  const checkDeptChild = await WorkingPosition.findOne({ where: { id } });
   if (checkDeptChild) {
-    const deptDel = await WorkingDepartment.destroy({ where: { departmentCode } });
-    const posDel = await WorkingPosition.destroy({ where: { departmentCode } });
+    const deptDel = await WorkingDepartment.destroy({ where: { id } });
+    const posDel = await WorkingPosition.destroy({ where: { departmentId: id } });
     return { deptDel, posDel };
   } else {
-    return await WorkingDepartment.destroy({ where: { departmentCode } });
+    return await WorkingDepartment.destroy({ where: { id } });
   }
 };
 
-export const checkWorkingPosExist = async (body: any, positionCode?: number | string) => {
-  return positionCode
-    ? await WorkingPosition.findOne({ where: { positionCode } })
-    : await WorkingPosition.findOne({ where: body });
+export const checkWorkingPosExist = async (body: any, id?: string) => {
+  return id ? await WorkingPosition.findOne({ where: { id } }) : await WorkingPosition.findOne({ where: body });
 };
 
-export const createWorkingPos = async (body: IWorkingPosition) => {
+export const createWorkingPos = async (body: IWorkingPositionAttributes) => {
   return await WorkingPosition.create(body);
 };
 
-export const updateWorkingPos = async (body: IWorkingPosition) => {
-  return await WorkingPosition.update(
-    { positionName: body.positionName },
-    { where: { departmentCode: body.departmentCode }, returning: true },
-  );
+export const updateWorkingPos = async (body: IWorkingPositionAttributes, id: string) => {
+  return await WorkingPosition.update(body, { where: { id }, returning: true });
 };
 
 export const deleteWorkingPos = async (positionCode: string | number) => {

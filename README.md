@@ -17,3 +17,4 @@
 - [007]: Make code in controllers/Education.ts clearly
 - [008]: Make code in controllers/WorkingPosition.ts clearly
 - [009]: Create shared folder
+- [010]: Edit data table of working position

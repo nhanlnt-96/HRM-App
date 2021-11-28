@@ -18,7 +18,7 @@ userRouter.post(
   body('issuedOn').notEmpty().trim(),
   body('issuedAt').notEmpty().trim(),
   body('currentAddress').notEmpty().trim(),
-  body('education').notEmpty().trim(),
+  body('educationCode').notEmpty().trim(),
   body('majorIn').notEmpty().trim(),
   body('salaryRange').notEmpty().trim(),
   body('positionId').notEmpty().trim(),

@@ -1,5 +1,6 @@
 import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
 import { IUserInfoAttributes } from './types';
+import { convertStringToProperCase } from '../../shared/helper';
 
 type IUserInfoCreationAttributes = Optional<IUserInfoAttributes, 'id'>;
 
@@ -9,12 +10,6 @@ export interface IUserInfoInstance
 
 export type UserInfoStatic = typeof Model & {
   new (values?: object, options?: BuildOptions): IUserInfoInstance;
-};
-
-const convertStringToProperCase = (text: string) => {
-  return text.replace(/\w\S*/g, function (str: string) {
-    return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
-  });
 };
 
 export const UserInfoFactory = (sequelize: Sequelize) => {
@@ -74,18 +69,6 @@ export const UserInfoFactory = (sequelize: Sequelize) => {
         set(value: string) {
           const properCaseValue = convertStringToProperCase(value);
           this.setDataValue('currentAddress', properCaseValue);
-        },
-      },
-      education: {
-        allowNull: false,
-        type: DataTypes.STRING,
-      },
-      majorIn: {
-        allowNull: false,
-        type: DataTypes.STRING,
-        set(value: string) {
-          const properCaseValue = convertStringToProperCase(value);
-          this.setDataValue('majorIn', properCaseValue);
         },
       },
       salaryRange: {

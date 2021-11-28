@@ -1,11 +1,11 @@
 import { db } from '../../models';
 import { IWorkingDepartmentAttributes, IWorkingPositionAttributes } from '../../models/position';
-import { convertString } from '../../shared/helper';
+import { convertStringToUnicode } from '../../shared/helper';
 
 const { WorkingDepartment, WorkingPosition } = db;
 
 export const convertToCode = (text: string) => {
-  let stringConverted = convertString(text);
+  let stringConverted = convertStringToUnicode(text);
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   stringConverted = stringConverted

@@ -7,6 +7,7 @@ import {
   createUserAllowanceFunc,
   createUserCertificationFunc,
   createUserContractFunc,
+  createUserEducationFunc,
   createUserFunc,
   createUserInfoFunc,
   createUserPositionFunc,
@@ -57,11 +58,13 @@ export const createUser = async (req: Request, res: Response) => {
         const createUserCertificationRes =
           certificationUrl && certificationDescription && (await createUserCertificationFunc(userInput));
         const createUserPositionRes = await createUserPositionFunc(userInput);
+        const createUserEducationRes = await createUserEducationFunc(userInput);
         ApiSuccess(
           201,
           {
             userAccount: createUserAccountRes,
             userInfo: createUserInfoRes,
+            userEducation: createUserEducationRes,
             userAllowance: createUserAllowanceRes,
             userContract: createUserContractRes,
             userCertification: createUserCertificationRes,

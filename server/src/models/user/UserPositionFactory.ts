@@ -26,10 +26,6 @@ export const UserPositionFactory = (sequelize: Sequelize) => {
         allowNull: false,
         type: DataTypes.UUID,
       },
-      departmentId: {
-        allowNull: false,
-        type: DataTypes.UUID,
-      },
       userId: {
         allowNull: false,
         type: DataTypes.UUID,

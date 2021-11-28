@@ -1,5 +1,5 @@
 import { db } from '../../models';
-import { convertString } from '../../shared/helper';
+import { convertStringToUnicode } from '../../shared/helper';
 import { Op } from 'sequelize';
 
 const {
@@ -9,12 +9,14 @@ const {
   UserContract,
   UserCertification,
   UserPosition,
+  UserEducation,
   WorkingDepartment,
   WorkingPosition,
+  UniversityData,
 } = db;
 
 export const convertToUsername = (name: string) => {
-  let nameConverted = convertString(name).toLowerCase();
+  let nameConverted = convertStringToUnicode(name).toLowerCase();
   const lastSpaceInName = nameConverted.lastIndexOf(' ');
   const nameOfUser = nameConverted.substring(lastSpaceInName + 1);
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -62,15 +64,30 @@ export const createUserPositionFunc = async (body: any) => {
   return await UserPosition.create(body);
 };
 
+export const createUserEducationFunc = async (body: any) => {
+  return await UserEducation.create(body);
+};
+
 export const getAllUserFunc = async () => {
   return await UserAccount.findAll({
     include: [
       { model: UserInfo, as: 'userInfo' },
-      { model: UserCertification, as: 'userCertifications' },
-      { model: UserSalaryAllowance, as: 'userAllowances' },
       { model: UserContract, as: 'userContracts' },
-      { model: WorkingDepartment, as: 'userDepartment' },
-      { model: WorkingPosition, as: 'userPositions' },
+      { model: UserCertification, as: 'userCertifications' },
+      { model: UniversityData, as: 'userEducations', through: { as: 'userMajorIn' } },
+      {
+        model: WorkingPosition,
+        include: [
+          {
+            model: WorkingDepartment,
+            as: 'workingDepartment',
+            attributes: { exclude: ['createdBy', 'updatedBy', 'createdAt', 'updatedAt'] },
+          },
+        ],
+        as: 'userPositions',
+        through: { attributes: [] },
+      },
+      { model: UserSalaryAllowance, as: 'userAllowances' },
     ],
     attributes: { exclude: ['password'] },
   });

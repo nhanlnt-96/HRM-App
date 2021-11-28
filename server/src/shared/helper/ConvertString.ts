@@ -1,4 +1,4 @@
-export const convertString = (text: string): string => {
+export const convertStringToUnicode = (text: string): string => {
   text = text.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
   text = text.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
   text = text.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
@@ -8,4 +8,10 @@ export const convertString = (text: string): string => {
   text = text.replace(/đ/gi, 'd');
 
   return text;
+};
+
+export const convertStringToProperCase = (text: string) => {
+  return text.replace(/\w\S*/g, function (str: string) {
+    return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
+  });
 };

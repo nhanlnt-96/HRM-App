@@ -49,8 +49,6 @@ export interface IUserInfoAttributes {
   issuedOn: Date;
   issuedAt: string;
   currentAddress: string;
-  education: string;
-  majorIn: string;
   salaryRange: string;
   workPermit: boolean;
 }
@@ -59,5 +57,11 @@ export interface IUserPositionAttributes {
   id: string;
   userId: string;
   positionId: string;
-  departmentId: string;
+}
+
+export interface IUserEducationAttributes {
+  id: string;
+  educationCode: string;
+  userId: string;
+  majorIn: string;
 }

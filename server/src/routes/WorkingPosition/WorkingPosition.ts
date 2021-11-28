@@ -8,23 +8,23 @@ import {
   putWorkingDepartment,
   putWorkingPosition,
 } from '../../controllers/WorkingPosition';
-import { body } from 'express-validator';
+import { body, check } from 'express-validator';
 
-const userRouter = express.Router();
+const positionRouter = express.Router();
 
 // Get working position
-userRouter.get('/', getAllWorkingPosition);
+positionRouter.get('/', getAllWorkingPosition);
 
 // Create working department
-userRouter.post(
+positionRouter.post(
   '/working-dept',
   body('departmentName').notEmpty().trim(),
-  body('createdBy').notEmpty().trim(),
+  check('createdBy').optional().if(body('createdBy').exists()).notEmpty().trim(),
   createWorkingDepartment,
 );
 
 // Put working department
-userRouter.put(
+positionRouter.put(
   '/working-dept/:code',
   body('departmentName').notEmpty().trim(),
   body('updatedBy').notEmpty().trim(),
@@ -32,10 +32,10 @@ userRouter.put(
 );
 
 // Delete working department
-userRouter.delete('/working-dept/:code', deleteWorkingDepartment);
+positionRouter.delete('/working-dept/:code', deleteWorkingDepartment);
 
 // Create working position
-userRouter.post(
+positionRouter.post(
   '/working-position',
   body('departmentId').notEmpty().trim(),
   body('positionName').notEmpty().trim(),
@@ -43,9 +43,9 @@ userRouter.post(
 );
 
 // Put working position
-userRouter.put('/working-position/:code', body('positionName').notEmpty().trim(), putWorkingPosition);
+positionRouter.put('/working-position/:code', body('positionName').notEmpty().trim(), putWorkingPosition);
 
 // Delete working position
-userRouter.delete('/working-position/:code', deleteWorkingPosition);
+positionRouter.delete('/working-position/:code', deleteWorkingPosition);
 
-export { userRouter };
+export { positionRouter };

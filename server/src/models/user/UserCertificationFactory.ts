@@ -31,13 +31,14 @@ export const UserCertificationFactory = (sequelize: Sequelize) => {
         allowNull: false,
         type: DataTypes.TEXT,
       },
-      description: {
+      certificationDescription: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
       createdBy: {
         allowNull: false,
         type: DataTypes.STRING,
+        defaultValue: '',
       },
       updatedBy: {
         allowNull: true,

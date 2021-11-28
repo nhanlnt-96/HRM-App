@@ -32,13 +32,14 @@ export const UserAllowanceFactory = (sequelize: Sequelize) => {
       allowNull: false,
       type: DataTypes.INTEGER,
     },
-    description: {
+    allowanceDescription: {
       allowNull: false,
       type: DataTypes.STRING,
     },
     createdBy: {
       allowNull: false,
       type: DataTypes.STRING,
+      defaultValue: '',
     },
     updatedBy: {
       allowNull: true,

@@ -11,6 +11,12 @@ export type UserInfoStatic = typeof Model & {
   new (values?: object, options?: BuildOptions): IUserInfoInstance;
 };
 
+const convertStringToProperCase = (text: string) => {
+  return text.replace(/\w\S*/g, function (str: string) {
+    return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
+  });
+};
+
 export const UserInfoFactory = (sequelize: Sequelize) => {
   return <UserInfoStatic>sequelize.define<IUserInfoInstance>(
     'hrm_user_info',
@@ -28,15 +34,19 @@ export const UserInfoFactory = (sequelize: Sequelize) => {
         type: DataTypes.UUID,
       },
       avatarUrl: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.TEXT,
       },
       fullName: {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      dob: {
+      email: {
         allowNull: false,
+        type: DataTypes.STRING,
+      },
+      dob: {
+        allowNull: true,
         type: DataTypes.DATE,
       },
       phoneNumber: {
@@ -54,10 +64,17 @@ export const UserInfoFactory = (sequelize: Sequelize) => {
       issuedAt: {
         allowNull: false,
         type: DataTypes.STRING,
+        set(value: string) {
+          this.setDataValue('issuedAt', value.toUpperCase());
+        },
       },
       currentAddress: {
         allowNull: false,
         type: DataTypes.TEXT,
+        set(value: string) {
+          const properCaseValue = convertStringToProperCase(value);
+          this.setDataValue('currentAddress', properCaseValue);
+        },
       },
       education: {
         allowNull: false,
@@ -66,14 +83,19 @@ export const UserInfoFactory = (sequelize: Sequelize) => {
       majorIn: {
         allowNull: false,
         type: DataTypes.STRING,
+        set(value: string) {
+          const properCaseValue = convertStringToProperCase(value);
+          this.setDataValue('majorIn', properCaseValue);
+        },
       },
       salaryRange: {
         allowNull: false,
         type: DataTypes.INTEGER,
       },
       workPermit: {
-        allowNull: true,
+        allowNull: false,
         type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
     },
     { timestamps: false },

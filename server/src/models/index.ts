@@ -51,18 +51,22 @@ const UserContract = UserContractFactory(sequelize);
 // Table association
 UserAccount.hasOne(UserInfo, {
   foreignKey: 'userId',
+  as: 'userInfo',
 });
 UserAccount.hasMany(UserPosition, {
   foreignKey: 'userId',
 });
 UserAccount.hasMany(UserCertification, {
   foreignKey: 'userId',
+  as: 'userCertifications',
 });
 UserAccount.hasMany(UserSalaryAllowance, {
   foreignKey: 'userId',
+  as: 'userAllowances',
 });
 UserAccount.hasMany(UserContract, {
   foreignKey: 'userId',
+  as: 'userContracts',
 });
 
 // Table working position
@@ -70,10 +74,23 @@ const WorkingDepartment = WorkingDepartmentFactory(sequelize);
 const WorkingPosition = WorkingPositionFactory(sequelize);
 // Table association
 WorkingDepartment.hasMany(WorkingPosition, {
+  as: 'workingPositions',
   foreignKey: 'departmentId',
 });
-UserAccount.belongsToMany(WorkingPosition, { through: 'hrm_user_position', foreignKey: 'userId' });
-WorkingPosition.belongsToMany(UserAccount, { through: 'hrm_user_position', foreignKey: 'positionId' });
+UserAccount.belongsToMany(WorkingPosition, { through: 'hrm_user_position', foreignKey: 'userId', as: 'userPositions' });
+UserAccount.belongsToMany(WorkingDepartment, {
+  through: 'hrm_user_position',
+  foreignKey: 'userId',
+  as: 'userDepartment',
+});
+WorkingPosition.belongsToMany(UserAccount, {
+  through: 'hrm_user_position',
+  foreignKey: 'positionId',
+});
+WorkingDepartment.belongsToMany(UserAccount, {
+  through: 'hrm_user_position',
+  foreignKey: 'departmentId',
+});
 
 // Table university data
 const UniversityData = UniversityDataFactory(sequelize);

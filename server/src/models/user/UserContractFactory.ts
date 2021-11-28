@@ -28,7 +28,7 @@ export const UserContractFactory = (sequelize: Sequelize) => {
       allowNull: false,
       type: DataTypes.UUID,
     },
-    description: {
+    contractDescription: {
       allowNull: false,
       type: DataTypes.STRING,
     },
@@ -37,12 +37,13 @@ export const UserContractFactory = (sequelize: Sequelize) => {
       type: DataTypes.DATE,
     },
     contractTo: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.DATE,
     },
     createdBy: {
       allowNull: false,
       type: DataTypes.STRING,
+      defaultValue: '',
     },
     updatedBy: {
       allowNull: true,

@@ -1,4 +1,5 @@
 import { Optional, Model, DataTypes, Sequelize, BuildOptions } from 'sequelize';
+import { hashSync } from 'bcryptjs';
 import { IUserAccountAttributes } from './types';
 
 type IUserAccountCreationAttributes = Optional<IUserAccountAttributes, 'id'>;
@@ -30,6 +31,10 @@ export const UserAccountFactory = (sequelize: Sequelize) => {
     password: {
       allowNull: false,
       type: DataTypes.STRING,
+      set(value: string) {
+        const hash = hashSync(value, 12);
+        this.setDataValue('password', hash);
+      },
     },
     managerId: {
       allowNull: true,
@@ -37,17 +42,18 @@ export const UserAccountFactory = (sequelize: Sequelize) => {
     },
     level: {
       allowNull: false,
-      type: DataTypes.INTEGER,
-      defaultValue: 2,
+      type: DataTypes.STRING,
+      defaultValue: 'user',
     },
     status: {
       allowNull: false,
-      type: DataTypes.INTEGER,
-      defaultValue: 1,
+      type: DataTypes.STRING,
+      defaultValue: 'active',
     },
     createdBy: {
       allowNull: false,
       type: DataTypes.STRING,
+      defaultValue: '',
     },
     updatedBy: {
       allowNull: true,

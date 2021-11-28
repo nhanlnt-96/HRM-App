@@ -3,8 +3,8 @@ export interface IUserAccountAttributes {
   username: string;
   password: string;
   managerId?: string;
-  level: number;
-  status: number;
+  level: string;
+  status: string;
   updatedBy?: string;
   createdBy: string;
 }
@@ -13,7 +13,7 @@ export interface IUserAllowanceAttributes {
   id: string;
   userId: string;
   allowance: number;
-  description: string;
+  allowanceDescription: string;
   updatedBy?: string;
   createdBy: string;
 }
@@ -22,7 +22,7 @@ export interface IUserCertificationAttributes {
   id: number;
   userId: string;
   certificationUrl: string;
-  description: string;
+  certificationDescription: string;
   updatedBy?: string;
   createdBy: string;
 }
@@ -30,7 +30,7 @@ export interface IUserCertificationAttributes {
 export interface IUserContractAttributes {
   id: string;
   userId: string;
-  description: string;
+  contractDescription: string;
   contractFrom: Date;
   contractTo: Date;
   createdBy: string;
@@ -42,6 +42,7 @@ export interface IUserInfoAttributes {
   userId: string;
   avatarUrl: string;
   fullName: string;
+  email: string;
   dob: Date;
   phoneNumber: string;
   cardId: string;
@@ -57,5 +58,6 @@ export interface IUserInfoAttributes {
 export interface IUserPositionAttributes {
   id: string;
   userId: string;
-  positionId: number;
+  positionId: string;
+  departmentId: string;
 }

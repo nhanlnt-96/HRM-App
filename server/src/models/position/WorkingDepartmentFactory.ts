@@ -34,6 +34,7 @@ export const WorkingDepartmentFactory = (sequelize: Sequelize) => {
     createdBy: {
       allowNull: false,
       type: DataTypes.STRING,
+      defaultValue: '',
     },
     updatedBy: {
       allowNull: true,

@@ -12,7 +12,6 @@ import {
   updateWorkingDept,
   updateWorkingPos,
 } from './Business';
-import { db } from '../../models';
 import { ApiError, ApiSuccess } from '../../shared/helper';
 
 // Get working position
@@ -95,10 +94,7 @@ export const deleteWorkingDepartment = async (req: Request, res: Response) => {
   if (recordCheck) {
     try {
       const deleteResponse = await deleteWorkingDept(id);
-      if (
-        deleteResponse === 1 ||
-        (typeof deleteResponse !== 'number' && deleteResponse?.deptDel === 1 && deleteResponse?.posDel === 0)
-      ) {
+      if (deleteResponse === 1) {
         ApiSuccess(200, `${recordCheck.departmentName} is deleted.`, res);
       } else {
         ApiError(400, 'Delete failed.', res);

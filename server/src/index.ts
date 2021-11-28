@@ -2,7 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import { db } from './models';
 import { educationRouter } from './routes/Education';
-import { userRouter } from './routes/WorkingPosition';
+import { positionRouter } from './routes/WorkingPosition';
+import { userRouter } from './routes/User';
 
 require('dotenv').config();
 
@@ -12,8 +13,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// User router
+app.use('/user', userRouter);
+
 // Working position router
-app.use('/position', userRouter);
+app.use('/position', positionRouter);
 
 // Education router
 app.use('/education', educationRouter);

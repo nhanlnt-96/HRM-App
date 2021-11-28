@@ -1,0 +1,8 @@
+# firebase config
+API_KEY = 'AIzaSyBaK2sKbEoygBTmaiSHez4kiaLVu99LxZk'
+AUTH_DOMAIN = 'social-app-api-f6567.firebaseapp.com'
+PROJECT_ID = 'social-app-api-f6567'
+STORAGE_BUCKET = 'social-app-api-f6567.appspot.com'
+MESSAGING_SENDER_ID = '981708246264'
+APP_ID = '1:981708246264:web:2b358be1924452d63f7f0d'
+

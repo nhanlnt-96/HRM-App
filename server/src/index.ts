@@ -4,6 +4,7 @@ import { db } from './models';
 import { educationRouter } from './routes/Education';
 import { positionRouter } from './routes/WorkingPosition';
 import { userRouter } from './routes/User';
+import { authRouter } from './routes/Auth';
 
 require('dotenv').config();
 
@@ -15,6 +16,9 @@ app.use(express.json());
 
 // User router
 app.use('/user', userRouter);
+
+// Auth router
+app.use('/auth', authRouter);
 
 // Working position router
 app.use('/position', positionRouter);

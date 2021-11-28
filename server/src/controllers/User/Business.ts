@@ -92,3 +92,29 @@ export const getAllUserFunc = async () => {
     attributes: { exclude: ['password'] },
   });
 };
+
+export const getOneUserFunc = async (id: string) => {
+  return await UserAccount.findOne({
+    where: { id },
+    include: [
+      { model: UserInfo, as: 'userInfo' },
+      { model: UserContract, as: 'userContracts' },
+      { model: UserCertification, as: 'userCertifications' },
+      { model: UniversityData, as: 'userEducations', through: { as: 'userMajorIn' } },
+      {
+        model: WorkingPosition,
+        include: [
+          {
+            model: WorkingDepartment,
+            as: 'workingDepartment',
+            attributes: { exclude: ['createdBy', 'updatedBy', 'createdAt', 'updatedAt'] },
+          },
+        ],
+        as: 'userPositions',
+        through: { attributes: [] },
+      },
+      { model: UserSalaryAllowance, as: 'userAllowances' },
+    ],
+    attributes: { exclude: ['password'] },
+  });
+};

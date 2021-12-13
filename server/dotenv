@@ -1,14 +1,10 @@
-# database local
+# db connect
 DB_HOST = localhost
 DB_USER = postgres
 DB_PASSWORD = Nhan1996
 DB_NAME = hrm_app
 DB_DIALECT = postgres
 
-# database heroku
-DB_HOST_HEROKU = ec2-54-87-112-29.compute-1.amazonaws.com
-DB_USER_HEROKU = ftbzyselcxlshw
-DB_PASSWORD_HEROKU = 275be88a9546507279afe05f1f97f4e7e57d506ca0d3b77a0e9ea795ad503809
-DB_NAME_HEROKU = d9jcrpacjchcrj
-DB_DIALECT_HEROKU = postgres
-DB_PORT_HEROKU = 5432
+# secret key
+JWT_SECRET = 188aa4aaceec257adf8a20e2e5f365cf0a7ba8146050051e2dc2f722877571256950aba15c324c6e99f5ca3a8e63b570dadaab895c1c8442632aff32f5f4064a
+ACCESS_TOKEN_EXPIRE = 30

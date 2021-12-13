@@ -3,6 +3,7 @@ import { validationResult } from 'express-validator';
 import { ApiError, ApiSuccess } from '../../shared/helper';
 import { compare } from 'bcryptjs';
 import { db } from '../../models';
+import { createAuthToken } from '../../shared/service/jwt';
 
 const { UserAccount } = db;
 
@@ -16,7 +17,8 @@ export const loginUser = async (req: Request, res: Response) => {
       if (!isPasswordMatch) {
         ApiError(401, `Password is wrong.`, res);
       } else {
-        ApiSuccess(200, recordCheck, res);
+        const token = createAuthToken(recordCheck);
+        ApiSuccess(200, { user: recordCheck, token }, res);
       }
     } catch (error) {
       ApiError(400, error, res);
